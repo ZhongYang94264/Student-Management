@@ -1,4 +1,4 @@
-package com.zyapp.sm.ui.student;
+package com.zyapp.sm.student;
 
 import android.app.Activity;
 import android.content.Intent;

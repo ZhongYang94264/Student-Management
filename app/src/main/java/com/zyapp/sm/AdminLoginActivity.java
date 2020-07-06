@@ -1,23 +1,22 @@
-package com.zyapp.sm.ui;
+package com.zyapp.sm;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.os.Bundle;
 
-import com.zyapp.sm.R;
 
-public class TeacherLoginActivity extends AppCompatActivity {
+public class AdminLoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teacher_login);
+        setContentView(R.layout.activity_admin_login);
         //去掉标题栏
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
         //设置状态栏颜色
-        this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorTeacher));
+        this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorAdmin));
     }
 }

@@ -1,4 +1,4 @@
-package com.zyapp.sm.ui.student;
+package com.zyapp.sm.student;
 
 import android.os.Bundle;
 
@@ -7,15 +7,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.zyapp.sm.R;
 
 
-
 /**
- *  修改密码
+ *  我的作业
  */
-public class ModificationActivity extends AppCompatActivity {
+public class WorkActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_modification);
+        setContentView(R.layout.activity_work);
     }
 }

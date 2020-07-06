@@ -6,7 +6,7 @@
     android:background="@mipmap/bg_select_login"
     android:orientation="vertical"
     android:paddingTop="150dp"
-    tools:context=".ui.SelectLoginActivity">
+    tools:context=".SelectLoginActivity">
 
     <!-- 管理员部分 -->
     <LinearLayout
