@@ -20,5 +20,14 @@ public class AdminLoginActivity extends AppCompatActivity {
         }
         //设置状态栏颜色
         this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorAdmin));
+        //初始化
+        initView();
+    }
+
+    /**
+     * 初始化方法
+     */
+    private void initView() {
+
     }
 }
