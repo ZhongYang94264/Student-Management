@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">学生管理</string>
+    <string name="text_admin">我是管理员</string>
+    <string name="text_teacher">我是教师</string>
+    <string name="text_student">我是学生</string>
+</resources>
