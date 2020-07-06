@@ -1,4 +1,4 @@
-package com.zyapp.sm;
+package com.zyapp.sm.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;

@@ -1,7 +1,5 @@
 package com.zyapp.sm.teacher.fragment;
 
-import android.widget.BaseAdapter;
-
 import com.zyapp.sm.R;
 import com.zyapp.sm.teacher.base.BaseFragment;
 

@@ -8,6 +8,10 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
+import com.zyapp.sm.activity.AdminLoginActivity;
+import com.zyapp.sm.activity.StudentLoginActivity;
+import com.zyapp.sm.activity.TeacherLoginActivity;
+
 public class SelectLoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView iv_admin_head, iv_teacher_head, iv_student_head;

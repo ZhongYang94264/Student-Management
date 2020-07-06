@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.zyapp.sm.R;
-import com.zyapp.sm.StudentLoginActivity;
+import com.zyapp.sm.activity.StudentLoginActivity;
 
 
 /**
