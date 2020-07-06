@@ -7,4 +7,8 @@
     <color name="colorTeacher">#efe652</color>
     <color name="colorStudent">#52ef8d</color>
     <color name="colorWhite">#FFFFFF</color>
+<<<<<<< HEAD
+=======
+    <color name="colorBlack">#000000</color>
+>>>>>>> 38a38251cb1e932f2af2913784a53ee5784b639b
 </resources>
