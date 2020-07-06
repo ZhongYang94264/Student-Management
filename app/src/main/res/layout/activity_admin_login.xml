@@ -36,7 +36,7 @@
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@mipmap/teacher_work_card" />
+                android:src="@mipmap/icon_teacher_work_card" />
 
             <View
                 android:layout_width="3px"
@@ -75,7 +75,7 @@
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@mipmap/admin_password" />
+                android:src="@mipmap/icon_admin_password" />
 
             <View
                 android:layout_width="3px"

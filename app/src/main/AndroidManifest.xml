@@ -16,15 +16,17 @@
         <activity android:name=".activity.TeacherLoginActivity" />
         <activity android:name=".activity.AdminLoginActivity" />
         <activity android:name=".StartActivity">
+
+        </activity>
+        <activity android:name=".SelectLoginActivity" />
+        <activity android:name=".activity.AdminRegisterActivity" />
+        <activity android:name=".activity.TeacherRegisterActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SelectLoginActivity" />
-        <activity android:name=".activity.AdminRegisterActivity" />
-        <activity android:name=".activity.TeacherRegisterActivity" />
     </application>
 
 </manifest>
