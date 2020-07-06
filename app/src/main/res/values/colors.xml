@@ -6,4 +6,6 @@
     <color name="colorAdmin">#52CAEF</color>
     <color name="colorTeacher">#efe652</color>
     <color name="colorStudent">#52ef8d</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
 </resources>

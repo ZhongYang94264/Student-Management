@@ -5,7 +5,7 @@
         <!--    构建一个长方形    -->
         <shape>
             <!--   填充的颜色   -->
-            <solid android:color="#fff"/>
+            <solid android:color="#1361A0"/>
             <!--   圆角   -->
             <corners android:radius="100dp"/>
         </shape>
