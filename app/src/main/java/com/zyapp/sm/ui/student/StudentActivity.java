@@ -20,6 +20,7 @@ public class StudentActivity extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student);
+        //初始化
         initStudent();
     }
 
