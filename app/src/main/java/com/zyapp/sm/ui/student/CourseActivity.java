@@ -45,7 +45,7 @@ public class CourseActivity extends Activity {
 
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(
                 CourseActivity.this,
-                R.layout.course_list_item,
+                R.layout.stu_course_lv,
                 null,
                 new String[] { "friendname", "telephone" },
                 new int[]{ },

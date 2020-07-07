@@ -4,16 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
-    tools:context=".student.StudentActivity">
+    tools:context=".ui.student.StudentActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/bg_text_title"
+        android:text="学生管理"
+        android:textSize="25dp"
+        android:textColor="@color/colorStudent"
+        android:gravity="center"/>
 
     <Button
         android:id="@+id/btn_course"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:text="我的课程"
-        android:textSize="20dp"
-        android:layout_marginBottom="20dp"/>
+        android:textSize="20dp"/>
 
     <Button
         android:id="@+id/btn_word"
@@ -21,7 +29,7 @@
         android:layout_height="wrap_content"
         android:text="我的作业"
         android:textSize="20dp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_margin="20dp"/>
 
     <Button
         android:id="@+id/btn_information"
@@ -29,7 +37,7 @@
         android:layout_height="wrap_content"
         android:text="个人信息"
         android:textSize="20dp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_margin="20dp"/>
 
     <Button
         android:id="@+id/btn_modification"
@@ -37,7 +45,7 @@
         android:layout_height="wrap_content"
         android:text="修改密码"
         android:textSize="20dp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_margin="20dp"/>
 
     <Button
         android:id="@+id/btn_out"
@@ -45,6 +53,6 @@
         android:layout_height="wrap_content"
         android:text="退出"
         android:textSize="20dp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_margin="20dp"/>
 
 </LinearLayout>

@@ -9,15 +9,45 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.StudentLoginActivity"></activity>
-        <activity android:name=".ui.TeacherLoginActivity" />
-        <activity android:name=".ui.AdminLoginActivity" />
-        <activity android:name=".ui.StartActivity">
+        <!-- 学生管理 -->
+        <activity
+            android:name=".ui.student.StudentActivity"
+            android:label="@string/student">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <!-- 修改密码 -->
+        <activity
+            android:name=".ui.student.ModificationActivity"
+            android:label="@string/student" >
+
+
+        </activity>
+        <!-- 个人信息 -->
+        <activity
+            android:name=".ui.student.InformationActivity"
+            android:label="@string/student" />
+        <!-- 我的作业 -->
+        <activity
+            android:name=".ui.student.WorkActivity"
+            android:label="@string/student" />
+        <!-- 我的课程 -->
+        <activity
+            android:name=".ui.student.CourseActivity"
+            android:label="@string/student" />
+
+        <!-- 注册 -->
+        <activity android:name=".ui.StudentLoginActivity" />
+        <activity android:name=".ui.TeacherLoginActivity" />
+        <activity android:name=".ui.AdminLoginActivity" />
+
+        <!-- 开始 -->
+        <activity android:name=".ui.StartActivity">
+
         </activity>
         <activity android:name=".ui.SelectLoginActivity" />
     </application>
