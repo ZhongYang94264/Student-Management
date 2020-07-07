@@ -20,7 +20,7 @@ public class TeacherRegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_teacher_register);
         //去掉标题栏
         if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
+            getSupportActionBar().hide( );
         }
         //设置状态栏颜色
         this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorTeacher));
