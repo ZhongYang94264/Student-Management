@@ -1,11 +1,11 @@
-package com.zyapp.sm.ui.DBH;
+package com.zyapp.sm.DBH;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 /**
- *  操作数据库
+ * 操作数据库
  */
 public class DBOperate {
     MySQLiteHelper mysqlite;
