@@ -28,8 +28,8 @@ public class AdminRegisterActivity extends AppCompatActivity {
         //设置状态栏颜色
         this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorAdmin));
 
-        initadminRegister();
-        setBtnRegister();
+        initadminRegister( );
+        setBtnRegister( );
     }
 
 
