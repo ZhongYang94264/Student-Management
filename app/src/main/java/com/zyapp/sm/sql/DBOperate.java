@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
  * 操作数据库
  */
 public class DBOperate {
+
     com.zyapp.sm.sql.MySQLiteHelper mysqlite;
     SQLiteDatabase db;
 
@@ -24,19 +25,9 @@ public class DBOperate {
         }
     }
 
-    // 输入数据
-    public void insertDB(String strinsert) {
-        db.execSQL(strinsert);
-    }
-
-    // 删除数据
-    public void deleteDB(String strdelete) {
-        db.execSQL(strdelete);
-    }
-
-    // 修改数据
-    public void updateDB(String strupdate) {
-        db.execSQL(strupdate);
+    //增 删 改
+    public void operationDB(String strsql) {
+        db.execSQL(strsql);
     }
 
     // 查询数据

@@ -26,22 +26,12 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-<<<<<<< HEAD
-
-=======
->>>>>>> ad11d8208faa200ce1552dceb80f5ec4ef5ac286
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="46dp"
                 android:layout_marginTop="48dp"
-<<<<<<< HEAD
-                android:layout_marginLeft="15dp"
                 android:background="@mipmap/stu_view"/>
-=======
-                android:src="@mipmap/student_head" />
->>>>>>> 68faaef7a307be8d74d9729e4ce51dd42c076ac3
-
 
             <LinearLayout
                 android:layout_width="match_parent"
