@@ -36,6 +36,12 @@
             android:label="@string/app_name" />
 
 
+        <!--    管理员    -->
+        <activity android:name=".admin.AdministratorsActivity" />
+        <activity android:name=".admin.Information" />
+        <activity android:name=".admin.StudentInformation" />
+        <activity android:name=".admin.TeacherInformation" />
+
         <!-- 老师   -->
         <activity android:name=".teacher.TeacherActivity">
 
@@ -60,10 +66,9 @@
         <activity android:name="activity.AdminLoginActivity" />
 
 
-
         <activity android:name=".SelectLoginActivity" />
         <activity android:name=".activity.AdminRegisterActivity" />
-        <activity android:name=".activity.TeacherRegisterActivity" >
+        <activity android:name=".activity.TeacherRegisterActivity">
 
         </activity>
     </application>
