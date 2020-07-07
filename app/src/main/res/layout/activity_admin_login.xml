@@ -25,16 +25,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/bg_admin_register_linear"
             android:gravity="center"
-            android:paddingLeft="20dp"
+            android:paddingLeft="40dp"
             android:paddingTop="20dp"
-            android:paddingRight="20dp"
-            android:paddingBottom="10dp">
+            android:paddingRight="40dp"
+            android:paddingBottom="20dp">
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@mipmap/icon_teacher_work_card" />
+                android:src="@mipmap/icon_admin_register_code" />
 
             <View
                 android:layout_width="3px"
@@ -54,21 +55,16 @@
 
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="5px"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:background="@color/colorBlack" />
         <!--  密码  -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/bg_admin_register_linear"
             android:gravity="center"
-            android:paddingLeft="20dp"
+            android:paddingLeft="40dp"
             android:paddingTop="20dp"
-            android:paddingRight="20dp"
-            android:paddingBottom="10dp">
+            android:paddingRight="40dp"
+            android:paddingBottom="20dp">
 
             <ImageView
                 android:layout_width="20dp"
@@ -100,12 +96,6 @@
 
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="5px"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:background="@color/colorBlack" />
 
         <!--  记住密码  -->
         <RelativeLayout
