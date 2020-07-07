@@ -25,6 +25,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="@string/text_admin"
             android:textColor="@color/colorAdmin"
             android:textSize="20sp" />
@@ -48,6 +49,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="@string/text_teacher"
             android:textColor="@color/colorTeacher"
             android:textSize="20sp" />
@@ -71,6 +73,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="@string/text_student"
             android:textColor="@color/colorStudent"
             android:textSize="20sp" />
