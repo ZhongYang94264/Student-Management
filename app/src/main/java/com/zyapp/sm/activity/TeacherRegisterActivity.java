@@ -1,6 +1,8 @@
 package com.zyapp.sm.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -23,6 +25,7 @@ public class TeacherRegisterActivity extends AppCompatActivity {
         //设置状态栏颜色
         this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorTeacher));
         initTeacherRegister();
+        setBtnRegister();
     }
 
     //初始化
@@ -32,5 +35,14 @@ public class TeacherRegisterActivity extends AppCompatActivity {
         et_password = findViewById(R.id.et_password);
         et_work_number = findViewById(R.id.et_work_number);
         btn_teacher_register = findViewById(R.id.btn_teacher_register);
+    }
+    //监听方法
+    public void setBtnRegister(){
+        btn_teacher_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TeacherRegisterActivity.this, TeacherLoginActivity.class));
+            }
+        });
     }
 }

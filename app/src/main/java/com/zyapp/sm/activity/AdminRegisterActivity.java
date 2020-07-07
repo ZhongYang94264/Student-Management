@@ -1,7 +1,9 @@
 package com.zyapp.sm.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -27,6 +29,7 @@ public class AdminRegisterActivity extends AppCompatActivity {
         this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorAdmin));
 
         initadminRegister();
+        setBtnRegister();
     }
 
 
@@ -37,7 +40,15 @@ public class AdminRegisterActivity extends AppCompatActivity {
         et_passwordone = findViewById(R.id.et_passwordone);
         et_confirm_password= findViewById(R.id.et_confirm_password);
         btn_admin_register = findViewById(R.id.btn_admin_register);
+
     }
-
-
-}
+    //监听方法
+    public void setBtnRegister(){
+        btn_admin_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdminRegisterActivity.this, AdminLoginActivity.class));
+            }
+        });
+    }
+   }
