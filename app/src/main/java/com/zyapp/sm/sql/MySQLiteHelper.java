@@ -26,7 +26,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         personsTable(db);
-        useTable(db);
+        useTable(db); //表
     }
 
     @Override

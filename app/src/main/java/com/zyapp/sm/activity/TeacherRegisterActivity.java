@@ -34,7 +34,7 @@ public class TeacherRegisterActivity extends AppCompatActivity {
     //初始化
     public void initTeacherRegister( ) {
         et_register_name = findViewById(R.id.et_register_name);
-        et_teacher_account_num = findViewById(R.id.et_teacher_account_num);
+        et_teacher_account_num = findViewById(R.id.et_confirm_password);
         et_password = findViewById(R.id.et_password);
         et_work_number = findViewById(R.id.et_work_number);
         btn_teacher_register = findViewById(R.id.btn_teacher_register);
