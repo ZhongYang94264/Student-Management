@@ -1,4 +1,4 @@
-package com.zyapp.sm.ui;
+package com.zyapp.sm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
-
-import com.zyapp.sm.R;
 
 public class StartActivity extends AppCompatActivity {
 

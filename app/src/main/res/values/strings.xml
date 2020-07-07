@@ -3,5 +3,13 @@
     <string name="text_admin">我是管理员</string>
     <string name="text_teacher">我是教师</string>
     <string name="text_student">我是学生</string>
+<<<<<<< HEAD
     <string name="student">学生管理</string>
+=======
+    <string name="text_menu_student">管理</string>
+    <string name="text_menu_achievement">成绩</string>
+    <string name="text_menu_work">作业</string>
+    <string name="text_menu_my">我</string>
+    <string name="text_title">学生管理</string>
+>>>>>>> 71bbc0bd2a1e315309ee8f177e5dce3e43a3c5c1
 </resources>

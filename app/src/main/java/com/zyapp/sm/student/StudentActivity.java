@@ -1,4 +1,4 @@
-package com.zyapp.sm.ui.student;
+package com.zyapp.sm.student;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.zyapp.sm.R;
-import com.zyapp.sm.ui.StudentLoginActivity;
+import com.zyapp.sm.activity.StudentLoginActivity;
 
 
 /**

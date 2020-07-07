@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--  点击后图片的样式  -->
+    <item android:state_pressed="true">
+        <!--    构建一个长方形    -->
+        <shape>
+            <!--   填充的颜色   -->
+            <solid android:color="@color/colorTeacher" />
+            <!--   圆角   -->
+            <corners android:radius="100dp" />
+        </shape>
+    </item>
+    <!--  默认图片的样式  -->
+    <item android:state_pressed="false">
+        <!--    构建一个长方形    -->
+        <shape>
+            <!--   填充的颜色   -->
+            <solid android:color="#FFCA28" />
+            <!--   圆角   -->
+            <corners android:radius="100dp" />
+        </shape>
+    </item>
+</selector>

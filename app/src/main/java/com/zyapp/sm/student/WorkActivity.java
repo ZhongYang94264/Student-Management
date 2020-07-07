@@ -1,4 +1,4 @@
-package com.zyapp.sm.ui.student;
+package com.zyapp.sm.student;
 
 import android.os.Bundle;
 import android.widget.ListView;

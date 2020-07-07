@@ -1,4 +1,4 @@
-package com.zyapp.sm.ui;
+package com.zyapp.sm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,9 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
-import com.zyapp.sm.R;
+import com.zyapp.sm.activity.AdminLoginActivity;
+import com.zyapp.sm.activity.StudentLoginActivity;
+import com.zyapp.sm.activity.TeacherLoginActivity;
 
 public class SelectLoginActivity extends AppCompatActivity implements View.OnClickListener {
 
