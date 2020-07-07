@@ -1,4 +1,4 @@
-package com.zyapp.sm.ui.DBH;
+package com.zyapp.sm.DBH;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -8,12 +8,12 @@ import android.database.sqlite.SQLiteDatabase;
  *  操作数据库
  */
 public class DBOperate {
-    MySQLiteHelper mysqlite;
+    com.zyapp.sm.DBH.MySQLiteHelper mysqlite;
     SQLiteDatabase db;
 
     // 打开数据库
     public void OpenDB(Context context) {
-        mysqlite = new MySQLiteHelper(context);
+        mysqlite = new com.zyapp.sm.DBH.MySQLiteHelper(context);
         db = mysqlite.getWritableDatabase();
     }
 

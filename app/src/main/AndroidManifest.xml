@@ -15,30 +15,17 @@
         <!-- 学生管理 -->
         <activity
             android:name=".student.StudentActivity"
-            android:label="@string/student"/>
-
-        <activity android:name=".teacher.TeacherActivity">
-
-        </activity>
-        <activity android:name=".activity.StudentLoginActivity" />
-        <activity android:name=".activity.TeacherLoginActivity" />
-        <activity android:name=".activity.AdminLoginActivity" />
-        <!--    开始跳转    -->
-        <activity android:name=".StartActivity">
+            android:label="@string/student">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <!-- 修改密码 -->
         <activity
             android:name=".student.ModificationActivity"
-            android:label="@string/student" >
-
-
-        </activity>
+            android:label="@string/student" />
         <!-- 个人信息 -->
         <activity
             android:name=".student.InformationActivity"
@@ -51,6 +38,21 @@
         <activity
             android:name=".student.CourseActivity"
             android:label="@string/student" />
+
+
+        <!-- 老师   -->
+        <activity android:name=".teacher.TeacherActivity">
+
+        </activity>
+        <activity android:name=".activity.StudentLoginActivity" />
+        <activity android:name=".activity.TeacherLoginActivity" />
+        <activity android:name=".activity.AdminLoginActivity" />
+
+        <!--    开始跳转    -->
+        <activity android:name=".StartActivity">
+
+        </activity>
+
 
         <!-- 注册 -->
         <activity android:name="activity.StudentLoginActivity" />
