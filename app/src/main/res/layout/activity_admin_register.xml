@@ -43,9 +43,11 @@
         <EditText
             android:id="@+id/et_register_code"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="@null"
             android:hint="请填写注册码"
+            android:inputType="number"
+            android:maxLines="1"
             android:textColor="@color/colorBlack"
             android:textSize="20sp" />
 
@@ -80,6 +82,8 @@
             android:layout_height="wrap_content"
             android:background="@null"
             android:hint="请填写管理员账号"
+            android:inputType="number"
+            android:maxLines="1"
             android:textColor="@color/colorBlack"
             android:textSize="20sp" />
 
