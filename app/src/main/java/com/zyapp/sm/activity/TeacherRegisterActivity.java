@@ -22,11 +22,11 @@ public class TeacherRegisterActivity extends AppCompatActivity {
         }
         //设置状态栏颜色
         this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorTeacher));
-        initteacherRegister();
+        initTeacherRegister();
     }
 
     //初始化
-    public void initteacherRegister() {
+    public void initTeacherRegister() {
         et_register_name = findViewById(R.id.et_register_name);
         et_teacher_account_num = findViewById(R.id.et_teacher_account_num);
         et_password = findViewById(R.id.et_password);
