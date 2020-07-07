@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.zyapp.sm">
 
     <application
@@ -8,21 +9,22 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-<<<<<<< HEAD
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
         <!-- 学生管理 -->
         <activity
-            android:name=".ui.student.StudentActivity"
-            android:label="@string/student">
-=======
+            android:name=".student.StudentActivity"
+            android:label="@string/student"/>
+
         <activity android:name=".teacher.TeacherActivity">
 
         </activity>
         <activity android:name=".activity.StudentLoginActivity" />
         <activity android:name=".activity.TeacherLoginActivity" />
         <activity android:name=".activity.AdminLoginActivity" />
+        <!--    开始跳转    -->
         <activity android:name=".StartActivity">
->>>>>>> 71bbc0bd2a1e315309ee8f177e5dce3e43a3c5c1
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,33 +34,31 @@
         </activity>
         <!-- 修改密码 -->
         <activity
-            android:name=".ui.student.ModificationActivity"
+            android:name=".student.ModificationActivity"
             android:label="@string/student" >
 
 
         </activity>
         <!-- 个人信息 -->
         <activity
-            android:name=".ui.student.InformationActivity"
+            android:name=".student.InformationActivity"
             android:label="@string/student" />
         <!-- 我的作业 -->
         <activity
-            android:name=".ui.student.WorkActivity"
+            android:name=".student.WorkActivity"
             android:label="@string/student" />
         <!-- 我的课程 -->
         <activity
-            android:name=".ui.student.CourseActivity"
+            android:name=".student.CourseActivity"
             android:label="@string/student" />
 
         <!-- 注册 -->
-        <activity android:name=".ui.StudentLoginActivity" />
-        <activity android:name=".ui.TeacherLoginActivity" />
-        <activity android:name=".ui.AdminLoginActivity" />
+        <activity android:name="activity.StudentLoginActivity" />
+        <activity android:name="activity.TeacherLoginActivity" />
+        <activity android:name="activity.AdminLoginActivity" />
 
-        <!-- 开始 -->
-        <activity android:name=".ui.StartActivity">
 
-        </activity>
+
         <activity android:name=".SelectLoginActivity" />
         <activity android:name=".activity.AdminRegisterActivity" />
         <activity android:name=".activity.TeacherRegisterActivity" >
