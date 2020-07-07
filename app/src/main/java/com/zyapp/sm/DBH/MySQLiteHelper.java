@@ -5,9 +5,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-/**
- *  搭建数据库
- */
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
     static final String DATABASE = "Info.db"; //数据库名
@@ -24,16 +21,13 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         studentTable(db);
     }
 
-    //创建学生表
-    private  void studentTable(SQLiteDatabase db){
-
-    }
-
-
-
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        //更新时回调
+    }
+
+    //创建学生表
+    private void studentTable(SQLiteDatabase db) {
 
     }
 }

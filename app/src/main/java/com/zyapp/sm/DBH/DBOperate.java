@@ -5,7 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 /**
- *  操作数据库
+ * 操作数据库
  */
 public class DBOperate {
     com.zyapp.sm.DBH.MySQLiteHelper mysqlite;
