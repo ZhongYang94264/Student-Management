@@ -113,11 +113,13 @@
             android:background="@color/colorBlack" />
 
         <EditText
-            android:id="@+id/et_password"
+            android:id="@+id/et_teacher_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
             android:hint="请填写密码"
+            android:inputType="textPassword"
+            android:maxLines="1"
             android:textColor="@color/colorBlack"
             android:textSize="20sp" />
 
@@ -147,11 +149,13 @@
             android:background="@color/colorBlack" />
 
         <EditText
-            android:id="@+id/et_work_number"
+            android:id="@+id/et_admin_confirm_pwd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
             android:hint="请再次输入密码"
+            android:inputType="textPassword"
+            android:maxLines="1"
             android:textColor="@color/colorBlack"
             android:textSize="20sp" />
 

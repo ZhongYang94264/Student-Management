@@ -40,14 +40,14 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_PERSONS);
 
 
-        String INSERT_PERSONS = " insert into " + sqlData.PERSONS + " values " +
-                "('001','Administrator','000000',NULL,NULL,NULL,NULL,NULL,NULL,NULL)," +
-                "('2018000227','罗海艳','227000','女','重庆科创职业学院','人工智能学院','软件技术','Zk1801','在校生','2015-01-07')," +
-                "('2018000649','谢丽','649000','女','重庆科创职业学院','人工智能学院','软件技术','ZK1801','在校生','1999-12-01')," +
-                "('5411001','卢朝江','100000','男','重庆科创职业学院','人工智能学院',NULL,NULL,NULL,NULL)," +
-                "('5411002','罗娜','110000','女','重庆科创职业学院','人工智能学院',NULL,NULL,NULL,NULL) ";
+//        String INSERT_PERSONS = " insert into " + sqlData.PERSONS + " values " +
+//                "('001','Administrator','000000',NULL,NULL,NULL,NULL,NULL,NULL,NULL)," +
+//                "('2018000227','罗海艳','227000','女','重庆科创职业学院','人工智能学院','软件技术','Zk1801','在校生','2015-01-07')," +
+//                "('2018000649','谢丽','649000','女','重庆科创职业学院','人工智能学院','软件技术','ZK1801','在校生','1999-12-01')," +
+//                "('5411001','卢朝江','100000','男','重庆科创职业学院','人工智能学院',NULL,NULL,NULL,NULL)," +
+//                "('5411002','罗娜','110000','女','重庆科创职业学院','人工智能学院',NULL,NULL,NULL,NULL) ";
 
-        db.execSQL(INSERT_PERSONS);
+//        db.execSQL(INSERT_PERSONS);
 
     }
 
@@ -55,36 +55,36 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     private void useTable(SQLiteDatabase db) {
         //科目表
         String CREATE_LESSONS = "create table " + sqlData.LESSONS + " (" +
-                "lesId INT(5)  PRIMARY KEY NOT NULL ," +
-                "lesName VARCHAR(30) , " +
-                "lesScore INT(2) DEFAULT '1') ";
+                "_lesId integher  PRIMARY KEY NOT NULL ," +
+                "lesName VARCHAR , " +
+                "lesScore integer DEFAULT '1') ";
         db.execSQL(CREATE_LESSONS);
 
-        String INSERT_LESSONS = " insert into " + sqlData.LESSONS + " values (1,'java',3),(2,'Android',3),(3,'数据库',4),(4,'unity3D',2),(5,'算法',5),(6,'体育',1) ";
-        db.execSQL(INSERT_LESSONS);
+//        String INSERT_LESSONS = " insert into " + sqlData.LESSONS + " values (1,'java',3),(2,'Android',3),(3,'数据库',4),(4,'unity3D',2),(5,'算法',5),(6,'体育',1) ";
+//        db.execSQL(INSERT_LESSONS);
 
         //学生课程表
         String CREATE_STUDENT_COU = "create table " + sqlData.STUDENT_COU + "(id VARCHAR(10) ,lesId INT(11),stuScore INT(3)) ";
         db.execSQL(CREATE_STUDENT_COU);
 
-        String INSERT_STUDENT_COU = " insert into " + sqlData.STUDENT_COU + " values ('2018000649',1,70),('2018000649',3,75),('2018000227',2,73),('2018000227',4,74) ";
-        db.execSQL(INSERT_STUDENT_COU);
+//        String INSERT_STUDENT_COU = " insert into " + sqlData.STUDENT_COU + " values ('2018000649',1,70),('2018000649',3,75),('2018000227',2,73),('2018000227',4,74) ";
+//        db.execSQL(INSERT_STUDENT_COU);
 
         //老师授课表
         String CREATE_TEACHER_LES = "create table " + sqlData.TEACHER_LES + "(lesId INT(11) ,Id VARCHAR(20)) ";
         db.execSQL(CREATE_TEACHER_LES);
 
-        String INSERT_TEACHER_LES = " insert into " + sqlData.TEACHER_LES + " values (1,'5411001'),(2,'5411002'),(3,'5411001') ";
-        db.execSQL(INSERT_TEACHER_LES);
+//        String INSERT_TEACHER_LES = " insert into " + sqlData.TEACHER_LES + " values (1,'5411001'),(2,'5411002'),(3,'5411001') ";
+//        db.execSQL(INSERT_TEACHER_LES);
 
         //作业表
         String CREATE_WORD = "create table " + sqlData.WORD + "(name VARCHAR(50) ,lesId VARCHAR(30) ,time DATETIME ,id VARCHAR(10) ) ";
         db.execSQL(CREATE_WORD);
 
-        String INSERT_WORD = " insert into " + sqlData.WORD + " values " +
-                "('Android课后练习','2','2020-07-03 15:21:26','5411002')," +
-                "('冒泡排序','5',NULL,NULL),('创建表，库','3',NULL,'5411001') ";
-        db.execSQL(CREATE_WORD);
+//        String INSERT_WORD = " insert into " + sqlData.WORD + " values " +
+//                "('Android课后练习','2','2020-07-03 15:21:26','5411002')," +
+//                "('冒泡排序','5',NULL,NULL),('创建表，库','3',NULL,'5411001') ";
+//        db.execSQL(CREATE_WORD);
 
     }
 }

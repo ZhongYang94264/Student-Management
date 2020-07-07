@@ -41,11 +41,13 @@
             android:background="@color/colorBlack" />
 
         <EditText
-            android:id="@+id/et_register_name"
+            android:id="@+id/et_teacher_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
             android:hint="请填写姓名"
+            android:inputType="text"
+            android:maxLines="1"
             android:textColor="@color/colorBlack"
             android:textSize="20sp" />
 
@@ -75,11 +77,13 @@
             android:background="@color/colorBlack" />
 
         <EditText
-            android:id="@+id/et_teacher_account_num"
+            android:id="@+id/et_teacher_work_num"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
             android:hint="请填写教师工号"
+            android:inputType="number"
+            android:maxLines="1"
             android:textColor="@color/colorBlack"
             android:textSize="20sp" />
 
@@ -109,11 +113,13 @@
             android:background="@color/colorBlack" />
 
         <EditText
-            android:id="@+id/et_passwordone"
+            android:id="@+id/et_teacher_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
             android:hint="请填写密码"
+            android:inputType="textPassword"
+            android:maxLines="1"
             android:textColor="@color/colorBlack"
             android:textSize="20sp" />
 
@@ -143,11 +149,13 @@
             android:background="@color/colorBlack" />
 
         <EditText
-            android:id="@+id/et_confirm_password"
+            android:id="@+id/et_teacher_confirm_pwd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
             android:hint="请再次输入密码"
+            android:inputType="textPassword"
+            android:maxLines="1"
             android:textColor="@color/colorBlack"
             android:textSize="20sp" />
 

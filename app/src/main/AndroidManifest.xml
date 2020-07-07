@@ -69,7 +69,6 @@
         <activity android:name=".SelectLoginActivity" />
         <activity android:name=".activity.AdminRegisterActivity" />
         <activity android:name=".activity.TeacherRegisterActivity">
-
         </activity>
     </application>
 
