@@ -16,11 +16,7 @@
         <activity
             android:name=".student.StudentActivity"
             android:label="@string/student">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <!-- 修改密码 -->
         <activity
@@ -50,7 +46,11 @@
 
         <!--    开始跳转    -->
         <activity android:name=".StartActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
 
