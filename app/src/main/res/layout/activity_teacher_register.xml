@@ -41,7 +41,7 @@
             android:background="@color/colorBlack" />
 
         <EditText
-            android:id="@+id/et_register_code"
+            android:id="@+id/et_register_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
@@ -75,7 +75,7 @@
             android:background="@color/colorBlack" />
 
         <EditText
-            android:id="@+id/et_admin_account_num"
+            android:id="@+id/et_teacher_account_num"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
@@ -109,7 +109,7 @@
             android:background="@color/colorBlack" />
 
         <EditText
-            android:id="@+id/et_password"
+            android:id="@+id/et_passwordone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
@@ -143,7 +143,7 @@
             android:background="@color/colorBlack" />
 
         <EditText
-            android:id="@+id/et_work_number"
+            android:id="@+id/et_confirm_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"

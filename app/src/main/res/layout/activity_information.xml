@@ -26,6 +26,10 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> ad11d8208faa200ce1552dceb80f5ec4ef5ac286
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
