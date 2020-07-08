@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="school_name">
+        <item>请选择您的学校</item>
+        <item>重庆科创职业学院</item>
+        <item>重庆财经职业学院</item>
+        <item>重庆水电职业学院</item>
+        <item>重庆大学城市科技学院</item>
+        <item>重庆文理学院</item>
+    </string-array>
+    <string-array name="department_name">
+        <item>请选择您所属的院系</item>
+        <item>人工智能学院</item>
+        <item>汽修学院</item>
+        <item>工商管理学院</item>
+        <item>会计学院</item>
+        <item>什么学院</item>
+    </string-array>
+    <string-array name="curriculum_name">
+        <item>请选择您的授课课程</item>
+        <item>Java语言程序设计</item>
+        <item>新职业英语</item>
+        <item>C语言程序设计</item>
+        <item>PHP应用开发基础</item>
+        <item>移动UI界面设计</item>
+    </string-array>
+    <string-array name="gender">
+        <item>请选择您的性别</item>
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+</resources>

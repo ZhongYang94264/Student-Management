@@ -41,6 +41,13 @@ public class TeacherActivity extends AppCompatActivity {
         initfragment();
         //底部导航栏的点击事件
         initBottomListener();
+        //接收来自登陆界面的工号
+        String work_num = getIntent().getStringExtra("work_num");
+        Log.d(TAG, "接收到工号==> " + work_num);
+        //
+        Bundle bundle = new Bundle();
+        bundle.putString("work_num", work_num);
+        mMyFragment.setArguments(bundle);
     }
 
     private void initBottomListener() {

@@ -100,6 +100,7 @@ public class AdminRegisterActivity extends AppCompatActivity {
     public void getDialog(final String title, String str) {
         new AlertDialog.Builder(AdminRegisterActivity.this).setTitle(title)
                 .setMessage(str)
+                .setIcon(R.mipmap.icon_admin_head)
                 .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

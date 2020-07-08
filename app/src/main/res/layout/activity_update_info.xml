@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F6FB"
     android:gravity="center_horizontal"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".teacher.UpdateInfoActivity">
 
     <RelativeLayout
         android:id="@+id/top_title"
@@ -17,10 +18,34 @@
             android:id="@+id/title_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="个人信息"
+            android:layout_centerHorizontal="true"
+            android:text="@string/text_title"
             android:textColor="@color/colorWhite"
             android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:onClick="backOnClick">
+
+            <ImageView
+                android:id="@+id/search"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="10dp"
+                android:src="@mipmap/icon_back" />
+
+            <TextView
+                android:id="@+id/tv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="返回"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp" />
+
+        </LinearLayout>
 
     </RelativeLayout>
 
@@ -29,69 +54,6 @@
         android:layout_height="2px"
         android:layout_below="@+id/top_title"
         android:background="#979797" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:background="@color/colorWhite"
-        android:padding="20dp">
-
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginRight="30dp"
-            android:src="@mipmap/icon_teacher_head" />
-
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="50dp"
-                    android:text="姓名"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/tv_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="张三"
-                    android:textSize="20sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="50dp"
-                    android:text="工号"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/tv_work_num"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="2020001"
-                    android:textSize="20sp" />
-
-            </LinearLayout>
-
-        </RelativeLayout>
-
-    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -103,15 +65,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="学校"
+            android:textColor="@color/colorBlack"
             android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/tv_school"
+        <Spinner
+            android:id="@+id/sp_school"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:text="请选择院校"
-            android:textSize="20sp" />
+            android:entries="@array/school_name" />
 
     </RelativeLayout>
 
@@ -130,15 +92,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="所属院系"
+            android:textColor="@color/colorBlack"
             android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/tv_department"
+        <Spinner
+            android:id="@+id/sp_department"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:text="请选择您所属的学院"
-            android:textSize="20sp" />
+            android:entries="@array/department_name" />
 
     </RelativeLayout>
 
@@ -157,15 +119,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="授课课程"
+            android:textColor="@color/colorBlack"
             android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/tv_curriculum"
+        <Spinner
+            android:id="@+id/sp_curriculum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:text="请选择您的授课课程"
-            android:textSize="20sp" />
+            android:entries="@array/curriculum_name" />
 
     </RelativeLayout>
 
@@ -184,15 +146,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="性别"
+            android:textColor="@color/colorBlack"
             android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/tv_gender"
+        <Spinner
+            android:id="@+id/sp_gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:text="请选择您的性别"
-            android:textSize="20sp" />
+            android:entries="@array/gender" />
 
     </RelativeLayout>
 
@@ -211,6 +173,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="出生日期"
+            android:textColor="@color/colorBlack"
             android:textSize="20sp" />
 
         <TextView
@@ -218,6 +181,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
+            android:onClick="selectBirth"
             android:text="请选择您的生日"
             android:textSize="20sp" />
 
@@ -238,14 +202,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="手机号"
+            android:textColor="@color/colorBlack"
             android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/tv_tel"
+        <EditText
+            android:id="@+id/et_tel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:text="请输入您的手机号"
+            android:background="@null"
+            android:hint="请输入您的手机号"
             android:textSize="20sp" />
 
     </RelativeLayout>
@@ -265,25 +231,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="邮箱"
+            android:textColor="@color/colorBlack"
             android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/tv_email"
+        <EditText
+            android:id="@+id/et_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:text="请输入您的邮箱"
+            android:background="@null"
+            android:hint="请输入您的邮箱"
             android:textSize="20sp" />
 
     </RelativeLayout>
 
     <Button
-        android:id="@+id/btn_update_info"
+        android:id="@+id/btn_confirm"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/bg_teacher"
-        android:text="修        改"
+        android:onClick="confirmOnClick"
+        android:text="确        定"
         android:textColor="@color/colorWhite"
         android:textSize="18sp" />
+
 </LinearLayout>

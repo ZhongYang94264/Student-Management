@@ -14,8 +14,8 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     //当数据库不存在时
     @Override
     public void onCreate(SQLiteDatabase db) {
-        personsTable(db);
         useTable(db); //表
+        userTable(db);//注册信息表
     }
 
     @Override
@@ -23,9 +23,9 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         //更新时回调
     }
 
-    //创建人员表
-    private void personsTable(SQLiteDatabase db) {
-
+    //通用的表
+    private void useTable(SQLiteDatabase db) {
+        //创建人员表
         String CREATE_PERSONS = "create table " + sqlData.PERSONS + " (" +
                 "_id varchar primary key NOT NULL, " +
                 "name varchar NOT NULL, " +
@@ -39,8 +39,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
         db.execSQL(CREATE_PERSONS);
 
-
-//        String INSERT_PERSONS = " insert into " + sqlData.PERSONS + " values " +
+        //        String INSERT_PERSONS = " insert into " + sqlData.PERSONS + " values " +
 //                "('001','Administrator','000000',NULL,NULL,NULL,NULL,NULL,NULL,NULL)," +
 //                "('2018000227','罗海艳','227000','女','重庆科创职业学院','人工智能学院','软件技术','Zk1801','在校生','2015-01-07')," +
 //                "('2018000649','谢丽','649000','女','重庆科创职业学院','人工智能学院','软件技术','ZK1801','在校生','1999-12-01')," +
@@ -49,10 +48,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
 //        db.execSQL(INSERT_PERSONS);
 
-    }
-
-    //通用的表
-    private void useTable(SQLiteDatabase db) {
         //科目表
         String CREATE_LESSONS = "create table " + sqlData.LESSONS + " (" +
                 "_lesId integher  PRIMARY KEY NOT NULL ," +
@@ -86,5 +81,23 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 //                "('冒泡排序','5',NULL,NULL),('创建表，库','3',NULL,'5411001') ";
 //        db.execSQL(CREATE_WORD);
 
+    }
+
+    /**
+     * 这个方法是注册信息时的表
+     */
+    private void userTable(SQLiteDatabase db) {
+        //教师注册表
+        String create_sql = "create table " + sqlData.TEACHER_TABLE + " (_id integer primary key not null," +
+                "name varchar not null," +
+                "password varchar not null," +
+                "school varchar," +
+                "department varchar," +
+                "curriculum varchar," +
+                "gender varchar," +
+                "birthday varchar," +
+                "tel varchar," +
+                "email varchar)";
+        db.execSQL(create_sql);
     }
 }
