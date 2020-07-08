@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -19,6 +20,7 @@ public class AdminRegisterActivity extends AppCompatActivity {
     private static final String TAG = "AdminRegisterActivity";
     EditText et_register_code, et_admin_account_num, et_password, et_admin_confirm_pwd;//注册码 管理员账号  密码 确定密码
     Button btn_admin_register;//注册按钮
+    private ImageButton ib_help;
     private String mStr_register_code, mStr_admin_account_num, mStr_password, mStr_confirm_password;
 
     @Override
@@ -30,7 +32,7 @@ public class AdminRegisterActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
         //设置状态栏颜色
-        this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorAdmin));
+        this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorAdminTitle));
         //初始化管理员注册
         initadminRegister();
         //监听事件
@@ -45,6 +47,7 @@ public class AdminRegisterActivity extends AppCompatActivity {
         et_password = findViewById(R.id.et_teacher_password);
         et_admin_confirm_pwd = findViewById(R.id.et_admin_confirm_pwd);
         btn_admin_register = findViewById(R.id.btn_admin_register);
+        ib_help = findViewById(R.id.ib_help);
     }
 
     //监听方法
@@ -82,6 +85,12 @@ public class AdminRegisterActivity extends AppCompatActivity {
 
                 //跳转
                 startActivity(new Intent(AdminRegisterActivity.this, AdminLoginActivity.class));
+            }
+        });
+        ib_help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getDialog("提示", "注册码由内部开发人员提供");
             }
         });
     }

@@ -27,7 +27,7 @@ public class AdminLoginActivity extends AppCompatActivity implements View.OnClic
             getSupportActionBar().hide();
         }
         //设置状态栏颜色
-        this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorAdmin));
+        this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorAdminTitle));
         //初始化
         initView();
     }
@@ -37,7 +37,7 @@ public class AdminLoginActivity extends AppCompatActivity implements View.OnClic
      */
     private void initView() {
         tv_register = findViewById(R.id.tv_register);
-        btn_login = findViewById(R.id.btn_teacher_login);
+        btn_login = findViewById(R.id.btn_admin_login);
         btn_login.setOnClickListener(this);
         tv_register.setOnClickListener(this);
     }
@@ -50,7 +50,7 @@ public class AdminLoginActivity extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btn_teacher_login:
+            case R.id.btn_admin_login:
                 startActivity(new Intent(AdminLoginActivity.this, AdministratorsActivity.class));
                 break;
             case R.id.tv_register:

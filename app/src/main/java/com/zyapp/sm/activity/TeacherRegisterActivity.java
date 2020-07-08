@@ -31,7 +31,7 @@ public class TeacherRegisterActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
         //设置状态栏颜色
-        this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorTeacher));
+        this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorTeacherTitle));
         initTeacherRegister();
         setBtnRegister();
     }
