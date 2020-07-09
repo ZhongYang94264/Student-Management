@@ -85,7 +85,7 @@ public class ModificationActivity extends Activity {
                     Log.d(TAG, "得到密碼==> " +oldpass);
                 }
                 if (  mStr_stuPassword.equals(et_stuPassword)) {
-                    if (mStr_stuPassword.equals( oldpass)) {
+                    if (mStr_stuPassword.equals( oldpass )) {
                         getDialog("错误", "当前密码和修改密码不能一致");
                     } else {
                         dbOperate.operationDB("update "+ sqlData.PERSONS  +" set password = '"+ mStr_stuNewpassword +"' where _id = '1' ");
