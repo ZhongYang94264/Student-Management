@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAdmin"
+    android:background="#F5F6FB"
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
@@ -23,20 +23,20 @@
             android:textSize="20sp" />
 
         <ImageView
-            android:id="@+id/search"
+            android:id="@+id/iv_search"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_centerVertical="true"
-            android:layout_toStartOf="@+id/menu"
+            android:layout_toStartOf="@+id/iv_menu"
             android:src="@mipmap/icon_search_normal" />
 
         <ImageView
-            android:id="@+id/menu"
+            android:id="@+id/iv_menu"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="30dp"
             android:src="@mipmap/icon_add_normal" />
 
     </RelativeLayout>
@@ -47,11 +47,9 @@
         android:layout_below="@+id/top_title"
         android:background="#CECECE" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="学生界面"
-        android:textColor="@color/colorWhite"
-        android:textSize="30sp" />
+    <ListView
+        android:id="@+id/lv_student_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>
