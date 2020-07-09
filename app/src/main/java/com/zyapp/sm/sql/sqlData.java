@@ -18,4 +18,5 @@ public class sqlData {
     public static final String TEACHER_LES = "t_teacher_les"; //老师授课表
     public static final String WORD = "t_word"; //作业表
     public static final String TEACHER_TABLE = "t_teacher";
+    public static final String TEACHER_ADMIN="t_admin";
 }

@@ -26,13 +26,16 @@ Button btn_teacher,btn_student,btn_information;
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_teacher:
-                startActivity(new Intent(this, TeacherInformation.class));
+                Intent TeacherInformation=new Intent(this, TeacherInformation.class);
+                startActivity(TeacherInformation);
                 break;
             case R.id.btn_student:
-                startActivity(new Intent(this, StudentInformation.class));
+                Intent StudentInformation=new Intent(this, StudentInformation.class);
+                startActivity(StudentInformation);
                 break;
             case R.id.btn_information:
-                startActivity(new Intent(this, Information.class));
+                Intent Information=new Intent(this, Information.class);
+                startActivity(Information);
                 break;
         }
     }
