@@ -104,7 +104,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     private void adminTable(SQLiteDatabase db) {
         //教师注册表
-        String create_sql = "create table " + sqlData.TEACHER_ADMIN + " (_id integer primary key not null," +
+        String create_sql = "create table " + sqlData.ADMIN_TABLE + " (_id integer primary key not null," +
                 "password varchar not null," +
                 "name varchar)";
         db.execSQL(create_sql);
