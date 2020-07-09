@@ -2,13 +2,19 @@ package com.zyapp.sm.student;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 import com.zyapp.sm.R;
+import com.zyapp.sm.activity.StudentLoginActivity;
+import com.zyapp.sm.sql.DBOperate;
+import com.zyapp.sm.sql.sqlData;
 
 
 /**
@@ -16,13 +22,16 @@ import com.zyapp.sm.R;
  */
 public class CourseActivity extends Activity {
 
+    private static final String TAG = "CourseActivity";
+
     ListView lv_course;
+    String cGrade;//班级
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course);
-        //AddDate();
+        AddDate();
     }
 
 
@@ -36,24 +45,40 @@ public class CourseActivity extends Activity {
 
         // 2. 从数据库中获得数据
         // 打开数据库
-
+        DBOperate dbOperate  = new DBOperate();
+        dbOperate.OpenDB(CourseActivity.this);
         // 创建查询语句
+
+        //班级
+        String sql1 = "select concat(profession,class) as cg from " + sqlData.PERSONS + " where id = ' " + StudentLoginActivity.stuId + " '";
+        Cursor classGrade = dbOperate.selectDB(sql1);
+        Log.d(TAG,"显示：" + classGrade);
+        while (classGrade.moveToNext()){
+            cGrade = classGrade.getString(0);
+            Log.d(TAG, "得到密碼==> " + cGrade);
+        }
+
+
+
+
+
 
 
         // 3. 实例化适配器
         //SimpleCursorAdapter 参数1：上下文 子条目布局文件 查询数据库的游标对象(null) 控件对应的数据表中的字段名 控件id
 
-        SimpleCursorAdapter adapter = new SimpleCursorAdapter(
-                CourseActivity.this,
-                R.layout.stu_course_lv,
-                null,
-                new String[] { "friendname", "telephone" },
-                new int[]{ },
-                0);
-
-        // 4. 设置适配器
-        lv_course.setAdapter(adapter);
+//        SimpleCursorAdapter adapter = new SimpleCursorAdapter(
+//                CourseActivity.this,
+//                R.layout.stu_course_lv,
+//                null,
+//                new String[] { "friendname", "telephone" },
+//                new int[]{ },
+//                0);
+//
+//        // 4. 设置适配器
+//        lv_course.setAdapter(adapter);
         // 5. 关闭数据库
+        dbOperate.CloseDB();
 
     }
 
