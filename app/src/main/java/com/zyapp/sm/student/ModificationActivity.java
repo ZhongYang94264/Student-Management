@@ -111,7 +111,7 @@ public class ModificationActivity extends Activity {
                         //关闭对话框
                         dialog.dismiss( );
                     }
-                }).show();
+                }).show( );
     }
 
 }
