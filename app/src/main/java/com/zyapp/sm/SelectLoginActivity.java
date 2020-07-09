@@ -53,14 +53,14 @@ public class SelectLoginActivity extends AppCompatActivity implements View.OnCli
         switch (v.getId()) {
             case R.id.iv_admin_head:
                 //跳转到管理员登录界面
-                startActivity(new Intent(SelectLoginActivity.this, AdminLoginActivity.class));
+                startActivity(new Intent(SelectLoginActivity.this,AdminLoginActivity.class));
                 break;
             case R.id.iv_teacher_head:
-                startActivity(new Intent(SelectLoginActivity.this, TeacherLoginActivity.class));
+                startActivity(new Intent(SelectLoginActivity.this,TeacherLoginActivity.class));
                 //跳转到教师登录界面
                 break;
             case R.id.iv_student_head:
-                startActivity(new Intent(SelectLoginActivity.this, StudentLoginActivity.class));
+                startActivity(new Intent(SelectLoginActivity.this,StudentLoginActivity.class));
                 //跳转到学生登录界面
                 break;
         }

@@ -1,28 +1,38 @@
 package com.zyapp.sm.student;
 
 import android.app.Activity;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.zyapp.sm.R;
+import com.zyapp.sm.activity.StudentLoginActivity;
+import com.zyapp.sm.sql.DBOperate;
+import com.zyapp.sm.sql.sqlData;
 
 
 /**
  * 个人信息
  */
 public class InformationActivity extends Activity {
+    private static final String TAG = "InformationActivity";
     TextView tv_stuName,tv_stuId,tv_stuScore; //姓名,学号,得分
 
     TextView tv_school,tv_department,tv_profession;//学校,院系，专业
     TextView tv_stuGenre;//学生类别(在校生)
-    TextView tv_stuSex,tv_stuDate;//性别，出生日期
+    TextView tv_stuSex;//性别，出生日期
 
+    //从数据库获取的信息
+    String[] stu = new String[9]; //除去日期
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_information);
+        Log.d(TAG,"显示：" + stu[0]);
         initInformation();
+        setData();
     }
 
     //初始化
@@ -35,7 +45,45 @@ public class InformationActivity extends Activity {
         tv_profession = findViewById(R.id.tv_profession);
         tv_stuGenre = findViewById(R.id.tv_stuGenre);
         tv_stuSex = findViewById(R.id.tv_stuSex);
-        tv_stuDate = findViewById(R.id.tv_stuDate);
         
+    }
+
+    public void setData(){
+
+        DBOperate dbOperate = new DBOperate();
+        dbOperate.OpenDB(InformationActivity.this);
+
+        String sql = "select * from " + sqlData.PERSONS + " where _id = '" + StudentLoginActivity.stuId + "' " ;
+        Cursor cursor = dbOperate.selectDB(sql);
+
+        //分数
+        String sql1 = "SELECT AVG(stuScore)  FROM " + sqlData.STUDENT_COU + " WHERE id = ' " + StudentLoginActivity.stuId + " '";
+        Cursor cursor1 = dbOperate.selectDB(sql1);
+        //获取
+      //String score = cursor1.getString(0);
+
+        //判断是否有数据
+        while (!cursor.moveToNext() || !cursor1.moveToNext()){
+            Log.d(TAG,"显示：没有数据" );
+            return;
+        }
+        //获得数据
+        int i;
+        for(i = 0; i <stu.length; i++){
+            stu[i] = cursor.getString(i);
+        }
+
+        //放入数据
+        tv_stuName.setText(stu[1]);
+        tv_stuId.setText(stu[0]);
+        tv_stuScore.setText(null); //分数
+        tv_school.setText(stu[4]);
+        tv_department.setText(stu[5]);
+        tv_profession.setText(stu[6]);
+        tv_stuGenre.setText(stu[8]);
+        tv_stuSex.setText(stu[3]);
+
+        dbOperate.CloseDB();
+
     }
 }

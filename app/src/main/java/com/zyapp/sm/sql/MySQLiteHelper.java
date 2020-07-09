@@ -24,30 +24,26 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         //更新时回调
     }
 
-    //通用的表
     private void useTable(SQLiteDatabase db) {
         //创建人员表
         String CREATE_PERSONS = "create table " + sqlData.PERSONS + " (" +
                 "_id varchar primary key NOT NULL, " +
                 "name varchar NOT NULL, " +
                 "password varchar NOT NULL," +
+                "sex VARCHAR," +
                 "school VARCHAR," +
                 "department VARCHAR," +
                 "profession VARCHAR ," +
                 "class VARCHAR," +
-                "genre VARCHAR ," +
-                "date DATE ) ";
+                "genre VARCHAR ) ";
 
         db.execSQL(CREATE_PERSONS);
 
-        //        String INSERT_PERSONS = " insert into " + sqlData.PERSONS + " values " +
-//                "('001','Administrator','000000',NULL,NULL,NULL,NULL,NULL,NULL,NULL)," +
-//                "('2018000227','罗海艳','227000','女','重庆科创职业学院','人工智能学院','软件技术','Zk1801','在校生','2015-01-07')," +
-//                "('2018000649','谢丽','649000','女','重庆科创职业学院','人工智能学院','软件技术','ZK1801','在校生','1999-12-01')," +
-//                "('5411001','卢朝江','100000','男','重庆科创职业学院','人工智能学院',NULL,NULL,NULL,NULL)," +
-//                "('5411002','罗娜','110000','女','重庆科创职业学院','人工智能学院',NULL,NULL,NULL,NULL) ";
+                String INSERT_PERSONS = " insert into " + sqlData.PERSONS + "(_id,name,password,sex,school,department,profession,class,genre) values " +
+                "('2018000227','罗海艳','227000','女','重庆科创职业学院','人工智能学院','软件技术','Zk1801','在校生')," +
+                "('2018000649','谢丽','649000','女','重庆科创职业学院','人工智能学院','软件技术','ZK1801','在校生') ";
 
-//        db.execSQL(INSERT_PERSONS);
+        db.execSQL(INSERT_PERSONS);
 
         //科目表
         String CREATE_LESSONS = "create table " + sqlData.LESSONS + " (" +
@@ -59,12 +55,12 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 //        String INSERT_LESSONS = " insert into " + sqlData.LESSONS + " values (1,'java',3),(2,'Android',3),(3,'数据库',4),(4,'unity3D',2),(5,'算法',5),(6,'体育',1) ";
 //        db.execSQL(INSERT_LESSONS);
 
-        //学生课程表
+        //学生课程表 + 成绩
         String CREATE_STUDENT_COU = "create table " + sqlData.STUDENT_COU + "(id VARCHAR(10) ,lesId INT(11),stuScore INT(3)) ";
         db.execSQL(CREATE_STUDENT_COU);
 
-//        String INSERT_STUDENT_COU = " insert into " + sqlData.STUDENT_COU + " values ('2018000649',1,70),('2018000649',3,75),('2018000227',2,73),('2018000227',4,74) ";
-//        db.execSQL(INSERT_STUDENT_COU);
+        String INSERT_STUDENT_COU = " insert into " + sqlData.STUDENT_COU + " values ('2018000649',1,70),('2018000649',3,75),('2018000227',2,73),('2018000227',4,74) ";
+        db.execSQL(INSERT_STUDENT_COU);
 
         //老师授课表
         String CREATE_TEACHER_LES = "create table " + sqlData.TEACHER_LES + "(lesId INT(11) ,Id VARCHAR(20)) ";

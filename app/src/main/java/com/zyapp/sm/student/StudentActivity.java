@@ -2,12 +2,16 @@ package com.zyapp.sm.student;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.zyapp.sm.R;
 import com.zyapp.sm.activity.StudentLoginActivity;
+import com.zyapp.sm.sql.DBOperate;
+import com.zyapp.sm.sql.sqlData;
 
 
 /**
@@ -15,6 +19,7 @@ import com.zyapp.sm.activity.StudentLoginActivity;
  */
 public class StudentActivity extends Activity implements View.OnClickListener {
 
+    private static final String TAG = "StudentActivity";
     Button btn_course,btn_word,btn_information,btn_modification,btn_out;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +27,8 @@ public class StudentActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_student);
         //初始化
         initStudent();
+       //add();
+        Log.d(TAG, "得到密碼==> " );
     }
 
     public void initStudent(){
@@ -38,6 +45,7 @@ public class StudentActivity extends Activity implements View.OnClickListener {
         btn_out.setOnClickListener(this);
 
     }
+
 
     @Override
     public void onClick(View v) {
