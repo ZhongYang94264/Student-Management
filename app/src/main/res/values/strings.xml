@@ -24,5 +24,6 @@
     <string name="text_tv_F_pwd">忘记密码?</string>
     <string name="text_student_login">登 录</string>
     <string name="text_student_help">还没有账号?</string>
+    <string name="text_admin_password">请填写密码</string>
 
 </resources>
