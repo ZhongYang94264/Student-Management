@@ -12,11 +12,6 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".teacher.UpdateInfoActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <!-- 学生管理 -->
         <activity
@@ -50,7 +45,11 @@
         <activity android:name=".activity.AdminLoginActivity" />
         <!-- 开始跳转 -->
         <activity android:name=".StartActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity> <!-- 注册 -->
         <activity android:name="activity.StudentLoginActivity" />
         <activity android:name="activity.TeacherLoginActivity" />
