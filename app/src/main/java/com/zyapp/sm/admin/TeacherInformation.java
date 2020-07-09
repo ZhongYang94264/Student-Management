@@ -25,6 +25,7 @@ public class TeacherInformation extends Activity {
         setContentView(R.layout.activity_teacher_information);
         lv_t_info=findViewById(R.id.lv_t_info);
         ed_teacher_name=findViewById(R.id.ed_teacher_name);
+        display("");
         Ed_text_tw();
     }
 
@@ -55,10 +56,7 @@ public class TeacherInformation extends Activity {
             }
             @Override
             public void afterTextChanged(Editable editable) {
-                if(ed_teacher_name.getText().toString().equals("")){
-                    display("");
-                }
-                else{
+                if(!ed_teacher_name.getText().toString().equals("")){
                     display(" where name like ? " + "%" + ed_teacher_name.getText().toString()+"%");
                 }
             }
