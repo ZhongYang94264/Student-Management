@@ -23,7 +23,7 @@ TextView tv_admin_id;
     public void cancellation(View view) {
         DBOperate DBO=new DBOperate();
         DBO.OpenDB(this);
-        String sentence=" delete from "+ sqlData.TEACHER_ADMIN + " where id=" + tv_admin_id.getText().toString();
+        String sentence=" delete from "+ sqlData.ADMIN_TABLE + " where id=" + tv_admin_id.getText().toString();
         DBO.operationDB(sentence);
         DBO.CloseDB();
     }
