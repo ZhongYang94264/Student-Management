@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 
 import com.zyapp.sm.R;
 import com.zyapp.sm.activity.StudentLoginActivity;
@@ -24,14 +25,20 @@ public class CourseActivity extends Activity {
 
     private static final String TAG = "CourseActivity";
 
+    TextView tvclass;
+
     ListView lv_course;
     String cGrade;//班级
+    String score;//分数
+    String lesName; //课程名
+    String teacherName,teacherId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course);
         AddDate();
+        Log.d(TAG, "出来 ");
     }
 
 
@@ -42,6 +49,7 @@ public class CourseActivity extends Activity {
 
         // 1. 初始化lIstView控件
         lv_course = findViewById(R.id.lv_course);
+        tvclass = findViewById(R.id.tv_class);
 
         // 2. 从数据库中获得数据
         // 打开数据库
@@ -50,33 +58,41 @@ public class CourseActivity extends Activity {
         // 创建查询语句
 
         //班级
-        String sql1 = "select concat(profession,class) as cg from " + sqlData.PERSONS + " where id = ' " + StudentLoginActivity.stuId + " '";
-        Cursor classGrade = dbOperate.selectDB(sql1);
-        Log.d(TAG,"显示：" + classGrade);
-        while (classGrade.moveToNext()){
-            cGrade = classGrade.getString(0);
-            Log.d(TAG, "得到密碼==> " + cGrade);
+        String sql1 = "select * from " + sqlData.STUDENT + " where _id = '" + StudentLoginActivity.stuId + "' " ;
+        Cursor cursor1 = dbOperate.selectDB(sql1);
+        while (cursor1.moveToNext()){
+            cGrade = cursor1.getString(6);
+            Log.d(TAG, "班级==> " + cGrade);
         }
 
+        //课程 + 分数 + 老师
+        String sql = "select * from " + sqlData.STUDENT_COU + " where _id = '" + StudentLoginActivity.stuId + "' " ;
 
+        Cursor cursor = dbOperate.selectDB(sql);
 
-
-
+        Log.d(TAG, "班级==>11 " + cursor);
+        while (cursor.moveToNext()){
+            score = cursor.getString(2);
+            lesName = cursor.getString(1);
+            teacherName = cursor.getString(3);
+            Log.d(TAG, "课程名==> " + lesName + " 分数 ===> " + score + " 老师 ===> " + teacherName);
+        }
 
 
         // 3. 实例化适配器
         //SimpleCursorAdapter 参数1：上下文 子条目布局文件 查询数据库的游标对象(null) 控件对应的数据表中的字段名 控件id
+        SimpleCursorAdapter adapter = new SimpleCursorAdapter(
+                CourseActivity.this,
+                R.layout.stu_course_lv,
+                cursor,
+                new String[] { "stuScore", "lesName","teacherName" },
+                new int[]{R.id.tv_score,R.id.tv_courseName,R.id.tv_teacherName },
+                0);
+        Log.d(TAG, "班级==>12 " + cursor);
 
-//        SimpleCursorAdapter adapter = new SimpleCursorAdapter(
-//                CourseActivity.this,
-//                R.layout.stu_course_lv,
-//                null,
-//                new String[] { "friendname", "telephone" },
-//                new int[]{ },
-//                0);
-//
-//        // 4. 设置适配器
-//        lv_course.setAdapter(adapter);
+        // 4. 设置适配器
+        lv_course.setAdapter(adapter);
+//        tvclass.setText(cGrade);
         // 5. 关闭数据库
         dbOperate.CloseDB();
 

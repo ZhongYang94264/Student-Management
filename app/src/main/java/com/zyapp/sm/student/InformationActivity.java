@@ -24,7 +24,7 @@ public class InformationActivity extends Activity {
     TextView tv_stuSex;//性别，出生日期
 
     //从数据库获取的信息
-    String[] stu = new String[9]; //除去日期
+    String[] stu = new String[8]; //除去日期
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,17 +53,21 @@ public class InformationActivity extends Activity {
         DBOperate dbOperate = new DBOperate();
         dbOperate.OpenDB(InformationActivity.this);
 
-        String sql = "select * from " + sqlData.PERSONS + " where _id = '" + StudentLoginActivity.stuId + "' " ;
+        String sql = "select * from " + sqlData.STUDENT + " where _id = '" + StudentLoginActivity.stuId + "' " ;
         Cursor cursor = dbOperate.selectDB(sql);
 
         //分数
-        String sql1 = "SELECT AVG(stuScore)  FROM " + sqlData.STUDENT_COU + " WHERE id = ' " + StudentLoginActivity.stuId + " '";
+        String sql1 = "SELECT AVG(stuScore) FROM " + sqlData.STUDENT_COU + " WHERE _id = ' " + StudentLoginActivity.stuId + " '";
         Cursor cursor1 = dbOperate.selectDB(sql1);
         //获取
-      //String score = cursor1.getString(0);
+        while (cursor1.moveToNext()){
+            Log.d(TAG,"显示：有数据" );
+            //String score = cursor1.getString(cursor.getColumnIndex("ag"));
+
+        }
 
         //判断是否有数据
-        while (!cursor.moveToNext() || !cursor1.moveToNext()){
+        while (!cursor.moveToNext()){
             Log.d(TAG,"显示：没有数据" );
             return;
         }
@@ -74,14 +78,17 @@ public class InformationActivity extends Activity {
         }
 
         //放入数据
-        tv_stuName.setText(stu[1]);
+
         tv_stuId.setText(stu[0]);
-        tv_stuScore.setText(null); //分数
+        tv_stuName.setText(stu[1]);
+                                    //密码
+        tv_stuSex.setText(stu[3]);
         tv_school.setText(stu[4]);
         tv_department.setText(stu[5]);
-        tv_profession.setText(stu[6]);
-        tv_stuGenre.setText(stu[8]);
-        tv_stuSex.setText(stu[3]);
+        tv_profession.setText(stu[6]); //班级
+        tv_stuGenre.setText(stu[7]);
+
+        tv_stuScore.setText(null); //分数
 
         dbOperate.CloseDB();
 

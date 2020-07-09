@@ -16,6 +16,7 @@ import androidx.core.content.ContextCompat;
 import com.zyapp.sm.R;
 import com.zyapp.sm.sql.DBOperate;
 import com.zyapp.sm.sql.sqlData;
+import com.zyapp.sm.teacher.TeacherActivity;
 
 public class TeacherRegisterActivity extends AppCompatActivity {
     EditText et_teacher_name, et_teacher_work_num, et_password, et_teacher_confirm_pwd;//姓名  教师工号  密码  确认密码
@@ -54,6 +55,7 @@ public class TeacherRegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // 获取文本
+
                 mStr_teacher_name = et_teacher_name.getText().toString();//教师姓名
                 mStr_teacher_work_num = et_teacher_work_num.getText().toString();//教师工号
                 mStr_password = et_password.getText().toString( );//密码

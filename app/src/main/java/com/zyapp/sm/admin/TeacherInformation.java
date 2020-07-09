@@ -23,9 +23,7 @@ public class TeacherInformation extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_information);
-<<<<<<< HEAD
 
-=======
         lv_t_info=findViewById(R.id.lv_t_info);
         ed_teacher_name=findViewById(R.id.ed_teacher_name);
         display("");
@@ -64,6 +62,5 @@ public class TeacherInformation extends Activity {
                 }
             }
         });
->>>>>>> cce3c40fccaa8d26496f68345b99dd5b1b3c305f
     }
 }

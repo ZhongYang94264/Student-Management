@@ -27,8 +27,6 @@ public class StudentActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_student);
         //初始化
         initStudent();
-       //add();
-        Log.d(TAG, "得到密碼==> " );
     }
 
     public void initStudent(){
