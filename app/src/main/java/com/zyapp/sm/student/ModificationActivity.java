@@ -95,7 +95,7 @@ public class ModificationActivity extends Activity {
                     getDialog("错误", "当前密码输入错误");
                 }
                 //关闭数据库
-                dbOperate.CloseDB();
+                dbOperate.CloseDB( );
             }
         });
     }
@@ -109,7 +109,7 @@ public class ModificationActivity extends Activity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //关闭对话框
-                        dialog.dismiss();
+                        dialog.dismiss( );
                     }
                 }).show();
     }
