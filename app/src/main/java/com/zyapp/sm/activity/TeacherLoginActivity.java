@@ -64,7 +64,7 @@ public class TeacherLoginActivity extends AppCompatActivity implements View.OnCl
                 //获取数据
                 mStr_work_num = et_account.getText().toString();
                 String pas = et_pwd.getText().toString();
-                //判断账号密码
+                //判断  账号   密码
                 if ("".equals(mStr_work_num) || "".equals(pas)) {
                     Toast.makeText(this, "用户名或密码不能为空", Toast.LENGTH_SHORT).show();
                     return;
