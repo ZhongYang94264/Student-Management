@@ -22,7 +22,6 @@ import com.zyapp.sm.sql.sqlData;
 import com.zyapp.sm.teacher.array.data;
 
 import java.util.Calendar;
-import java.util.Collections;
 
 public class UpdateInfoActivity extends AppCompatActivity {
 
@@ -169,17 +168,17 @@ public class UpdateInfoActivity extends AppCompatActivity {
         //学校
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,
                 data.school);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
         sp_school.setAdapter(adapter);
         //院系
         ArrayAdapter<String> d_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,
                 data.department);
-        d_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        d_adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
         sp_department.setAdapter(d_adapter);
         //课程
         ArrayAdapter<String> c_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,
                 data.curriculum);
-        c_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        c_adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
         sp_curriculum.setAdapter(c_adapter);
         //点击事件
         sp_school.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -193,49 +192,49 @@ public class UpdateInfoActivity extends AppCompatActivity {
                 if (sp_school.getSelectedItem().toString().equals("重庆科创职业学院")) {
                     ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
                             android.R.layout.simple_spinner_item, data.kc_department);
-                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
                     sp_department.setAdapter(adapter);
                     //监听事件
                     sp_department.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                            if (sp_department.getSelectedItem().toString().equals("请选择您的院系")) {
+                            if (sp_department.getSelectedItem().toString().equals("请选择您的所属院系")) {
                                 sp_curriculum.setSelection(0, true);
                             }
                             if (sp_department.getSelectedItem().toString().equals("人工智能学院")) {
                                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
                                         android.R.layout.simple_spinner_item, data.kc1_curriculum);
-                                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
                                 sp_curriculum.setAdapter(adapter);
                             }
                             if (sp_department.getSelectedItem().toString().equals("智能制造学院")) {
                                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
                                         android.R.layout.simple_spinner_item, data.kc2_curriculum);
-                                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
                                 sp_curriculum.setAdapter(adapter);
                             }
                             if (sp_department.getSelectedItem().toString().equals("汽车工程学院")) {
                                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
-                                        android.R.layout.simple_spinner_item, data.kc1_curriculum);
-                                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        android.R.layout.simple_spinner_item, data.kc3_curriculum);
+                                adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
                                 sp_curriculum.setAdapter(adapter);
                             }
                             if (sp_department.getSelectedItem().toString().equals("建筑工程学院")) {
                                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
-                                        android.R.layout.simple_spinner_item, data.kc1_curriculum);
-                                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        android.R.layout.simple_spinner_item, data.kc4_curriculum);
+                                adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
                                 sp_curriculum.setAdapter(adapter);
                             }
                             if (sp_department.getSelectedItem().toString().equals("经济管理学院")) {
                                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
-                                        android.R.layout.simple_spinner_item, data.kc1_curriculum);
-                                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        android.R.layout.simple_spinner_item, data.kc5_curriculum);
+                                adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
                                 sp_curriculum.setAdapter(adapter);
                             }
                             if (sp_department.getSelectedItem().toString().equals("艺术与教育学院")) {
                                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
-                                        android.R.layout.simple_spinner_item, data.kc1_curriculum);
-                                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        android.R.layout.simple_spinner_item, data.kc6_curriculum);
+                                adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
                                 sp_curriculum.setAdapter(adapter);
                             }
                         }
@@ -249,14 +248,124 @@ public class UpdateInfoActivity extends AppCompatActivity {
                 if (sp_school.getSelectedItem().toString().equals("重庆财经职业学院")) {
                     ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
                             android.R.layout.simple_spinner_item, data.cj_department);
-                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
                     sp_department.setAdapter(adapter);
+                    //
+                    sp_department.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            if (sp_department.getSelectedItem().toString().equals("请选择您的所属院系")) {
+                                sp_curriculum.setSelection(0, true);
+                            }
+                            if (sp_department.getSelectedItem().toString().equals("工商管理学院")) {
+                                ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
+                                        android.R.layout.simple_spinner_item, data.cj1_curriculum);
+                                adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
+                                sp_curriculum.setAdapter(adapter);
+                            }
+                            if (sp_department.getSelectedItem().toString().equals("经济贸易学院")) {
+                                ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
+                                        android.R.layout.simple_spinner_item, data.cj2_curriculum);
+                                adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
+                                sp_curriculum.setAdapter(adapter);
+                            }
+                            if (sp_department.getSelectedItem().toString().equals("金融学院")) {
+                                ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
+                                        android.R.layout.simple_spinner_item, data.cj3_curriculum);
+                                adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
+                                sp_curriculum.setAdapter(adapter);
+                            }
+                            if (sp_department.getSelectedItem().toString().equals("会计学院")) {
+                                ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
+                                        android.R.layout.simple_spinner_item, data.cj4_curriculum);
+                                adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
+                                sp_curriculum.setAdapter(adapter);
+                            }
+                            if (sp_department.getSelectedItem().toString().equals("商务大数据学院")) {
+                                ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
+                                        android.R.layout.simple_spinner_item, data.cj5_curriculum);
+                                adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
+                                sp_curriculum.setAdapter(adapter);
+                            }
+                            if (sp_department.getSelectedItem().toString().equals("应用技术学院")) {
+                                ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
+                                        android.R.layout.simple_spinner_item, data.cj6_curriculum);
+                                adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
+                                sp_curriculum.setAdapter(adapter);
+                            }if (sp_department.getSelectedItem().toString().equals("马克思主义学院")) {
+                                ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
+                                        android.R.layout.simple_spinner_item, data.cj7_curriculum);
+                                adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
+                                sp_curriculum.setAdapter(adapter);
+                            }
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
                 }
                 if (sp_school.getSelectedItem().toString().equals("重庆文理学院")) {
                     ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
                             android.R.layout.simple_spinner_item, data.wl_department);
-                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
                     sp_department.setAdapter(adapter);
+                    //
+                    sp_department.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            if (sp_department.getSelectedItem().toString().equals("请选择您的所属院系")) {
+                                sp_curriculum.setSelection(0, true);
+                            }
+                            if (sp_department.getSelectedItem().toString().equals("文化与传媒学院")) {
+                                ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
+                                        android.R.layout.simple_spinner_item, data.wl1_curriculum);
+                                adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
+                                sp_curriculum.setAdapter(adapter);
+                            }
+                            if (sp_department.getSelectedItem().toString().equals("数学与大数据学院")) {
+                                ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
+                                        android.R.layout.simple_spinner_item, data.wl2_curriculum);
+                                adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
+                                sp_curriculum.setAdapter(adapter);
+                            }
+                            if (sp_department.getSelectedItem().toString().equals("外国语学院")) {
+                                ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
+                                        android.R.layout.simple_spinner_item, data.wl3_curriculum);
+                                adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
+                                sp_curriculum.setAdapter(adapter);
+                            }
+                            if (sp_department.getSelectedItem().toString().equals("体育学院")) {
+                                ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
+                                        android.R.layout.simple_spinner_item, data.wl4_curriculum);
+                                adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
+                                sp_curriculum.setAdapter(adapter);
+                            }
+                            if (sp_department.getSelectedItem().toString().equals("音乐学院")) {
+                                ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
+                                        android.R.layout.simple_spinner_item, data.wl5_curriculum);
+                                adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
+                                sp_curriculum.setAdapter(adapter);
+                            }
+                            if (sp_department.getSelectedItem().toString().equals("美术与设计学院")) {
+                                ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
+                                        android.R.layout.simple_spinner_item, data.wl6_curriculum);
+                                adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
+                                sp_curriculum.setAdapter(adapter);
+                            }if (sp_department.getSelectedItem().toString().equals("土木工程学院")) {
+                                ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
+                                        android.R.layout.simple_spinner_item, data.wl7_curriculum);
+                                adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
+                                sp_curriculum.setAdapter(adapter);
+                            }
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
                 }
             }
 
