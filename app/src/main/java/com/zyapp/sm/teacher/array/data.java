@@ -10,13 +10,13 @@ package com.zyapp.sm.teacher.array;
  */
 public class data {
     public static final String[] school = {"请选择您的学校", "重庆科创职业学院", "重庆财经职业学院", "重庆文理学院"};
-    public static final String[] department = {"请选择您所属的院校"};
+    public static final String[] department = {"请选择您的所属院系"};
     public static final String[] curriculum = {"请选择您的授课课程"};
-    public static final String[] kc_department = {"请选择您的院系", "人工智能学院", "智能制造学院", "汽车工程学院",
+    public static final String[] kc_department = {"请选择您的所属院系", "人工智能学院", "智能制造学院", "汽车工程学院",
             "建筑工程学院", "经济管理学院", "艺术与教育学院"};
-    public static final String[] cj_department = {"请选择您的院系", "工商管理学院", "经济贸易学院", "金融学院",
+    public static final String[] cj_department = {"请选择您的所属院系", "工商管理学院", "经济贸易学院", "金融学院",
             "会计学院", "商务大数据学院", "应用技术学院", "马克思主义学院"};
-    public static final String[] wl_department = {"请选择您的院系", "文化与传媒学院", "数学与大数据学院", "外国语学院",
+    public static final String[] wl_department = {"请选择您的所属院系", "文化与传媒学院", "数学与大数据学院", "外国语学院",
             "体育学院", "音乐学院", "美术与设计学院", "土木工程学院"};
     public static final String[] kc1_curriculum = {"请选择您的授课课程", "Java语言程序设计", "新职业英语", "C语言程序设计", "PHP应用开发基础",
             "移动UI界面设计"};

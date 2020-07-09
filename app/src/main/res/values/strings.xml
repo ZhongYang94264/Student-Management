@@ -8,5 +8,22 @@
     <string name="text_menu_work">作业</string>
     <string name="text_menu_my">我</string>
     <string name="text_title">学生管理</string>
+    <string name="text_admin_register_code">请填写注册码</string>
+    <string name="text_admin_account_num">请填写管理员账号</string>
+    <string name="text_admin_pwd">请填写密码</string>
+    <string name="text_admin_confirm_pwd">请再次输入密码</string>
+    <string name="text_admin_register">注 册</string>
+    <string name="text_teacher_name">请填写姓名</string>
+    <string name="text_teacher_work_num">请填写教师工号</string>
+    <string name="text_teacher_pwd">请填写密码</string>
+    <string name="text_teacher_confirm_pwd">请再次输入密码</string>
+    <string name="text_teacher_register">注 册</string>
+    <string name="text_student_id">请填写学号</string>
+    <string name="text_student_pwd">请填写密码</string>
+    <string name="text_cb_R_pwd">记住密码</string>
+    <string name="text_tv_F_pwd">忘记密码?</string>
+    <string name="text_student_login">登 录</string>
+    <string name="text_student_help">还没有账号?</string>
+    <string name="text_admin_password">请填写密码</string>
 
 </resources>

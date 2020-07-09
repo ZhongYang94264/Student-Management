@@ -8,4 +8,26 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+<!--  管理员输入框背景  -->
+    <style name="bg_EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:background">@drawable/bg_admin_register_linear</item>
+    </style>
+
+
+    <!--  教师输入框背景  -->
+    <style name="bg_TeacherEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:background">@drawable/bg_admin_register_linear</item>
+    </style>
 </resources>
