@@ -38,6 +38,7 @@ public class TeacherInformation extends Activity {
                 new String[]{"_id", "name"}, new int[]{R.id.tv_t_name, R.id.tv_t_id},0);
         //显示到 listView
         lv_t_info.setAdapter(adapter);
+        adapter.notifyDataSetChanged();//更新适配器内容
         DBO.CloseDB();
     }
 
@@ -58,8 +59,7 @@ public class TeacherInformation extends Activity {
                     display("");
                 }
                 else{
-                    display(" where name= " +ed_teacher_name.getText().toString());
-                    adapter.notifyDataSetChanged();//更新适配器内容
+                    display(" where name like ? " + "%" + ed_teacher_name.getText().toString()+"%");
                 }
             }
         });
