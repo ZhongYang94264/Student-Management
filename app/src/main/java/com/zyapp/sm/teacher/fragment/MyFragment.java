@@ -26,7 +26,7 @@ public class MyFragment extends BaseFragment implements View.OnClickListener {
     private static final String TAG = "MyFragment";
     private Button btn_update;
     private String mWork_num;
-    private TextView tv_name, tv_work_num, tv_scholl, tv_department, tv_curriculum, tv_gender, tv_birth, tv_tel, tv_email;
+    private TextView tv_name, tv_work_num, tv_school, tv_department, tv_curriculum, tv_gender, tv_birth, tv_tel, tv_email;
 
     @Override
     protected int getRootViewResId() {
@@ -40,7 +40,7 @@ public class MyFragment extends BaseFragment implements View.OnClickListener {
         btn_update = getActivity().findViewById(R.id.btn_update_info);
         tv_name = getActivity().findViewById(R.id.tv_name);
         tv_work_num = getActivity().findViewById(R.id.tv_work_num);
-        tv_scholl = getActivity().findViewById(R.id.tv_school);
+        tv_school = getActivity().findViewById(R.id.tv_school);
         tv_department = getActivity().findViewById(R.id.tv_department);
         tv_curriculum = getActivity().findViewById(R.id.tv_curriculum);
         tv_gender = getActivity().findViewById(R.id.tv_gender);
@@ -81,7 +81,7 @@ public class MyFragment extends BaseFragment implements View.OnClickListener {
             //设置显示内容
             tv_name.setText(str_name);
             tv_work_num.setText(str_id);
-            tv_scholl.setText(str_school);
+            tv_school.setText(str_school);
             tv_department.setText(str_department);
             tv_curriculum.setText(str_curriculum);
             tv_gender.setText(str_gender);

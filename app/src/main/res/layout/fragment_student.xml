@@ -45,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="2px"
         android:layout_below="@+id/top_title"
-        android:background="#7A745F" />
+        android:background="#CECECE" />
 
     <TextView
         android:layout_width="wrap_content"

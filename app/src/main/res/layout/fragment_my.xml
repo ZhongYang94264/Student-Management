@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="2px"
         android:layout_below="@+id/top_title"
-        android:background="#979797" />
+        android:background="#CECECE" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -57,6 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="50dp"
                     android:text="姓名"
+                    android:textColor="@color/colorBlack"
                     android:textSize="20sp" />
 
                 <TextView
@@ -78,6 +79,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="50dp"
                     android:text="工号"
+                    android:textColor="@color/colorBlack"
                     android:textSize="20sp" />
 
                 <TextView
@@ -103,6 +105,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="学校"
+            android:textColor="@color/colorBlack"
             android:textSize="20sp" />
 
         <TextView
@@ -130,6 +133,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="所属院系"
+            android:textColor="@color/colorBlack"
             android:textSize="20sp" />
 
         <TextView
@@ -157,6 +161,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="授课课程"
+            android:textColor="@color/colorBlack"
             android:textSize="20sp" />
 
         <TextView
@@ -184,6 +189,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="性别"
+            android:textColor="@color/colorBlack"
             android:textSize="20sp" />
 
         <TextView
@@ -211,6 +217,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="出生日期"
+            android:textColor="@color/colorBlack"
             android:textSize="20sp" />
 
         <TextView
@@ -238,6 +245,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="手机号"
+            android:textColor="@color/colorBlack"
             android:textSize="20sp" />
 
         <TextView
@@ -265,6 +273,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="邮箱"
+            android:textColor="@color/colorBlack"
             android:textSize="20sp" />
 
         <TextView
