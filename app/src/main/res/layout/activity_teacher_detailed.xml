@@ -24,6 +24,7 @@
             android:text="姓名："/>
         <TextView
             android:id="@+id/tv_td_name"
+            android:textSize="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
@@ -38,6 +39,7 @@
             android:text="I    D："/>
         <TextView
             android:id="@+id/tv_td_id"
+            android:textSize="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
@@ -52,6 +54,7 @@
             android:text="学校："/>
         <TextView
             android:id="@+id/tv_td_shool"
+            android:textSize="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
@@ -66,6 +69,7 @@
             android:text="部门："/>
         <TextView
             android:id="@+id/tv_td_department"
+            android:textSize="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
@@ -80,6 +84,7 @@
             android:text="课程："/>
         <TextView
             android:id="@+id/tv_td_curriculum"
+            android:textSize="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
@@ -94,6 +99,7 @@
             android:text="性别："/>
         <TextView
             android:id="@+id/tv_td_gender"
+            android:textSize="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
@@ -108,6 +114,7 @@
             android:text="生日："/>
         <TextView
             android:id="@+id/tv_td_birthday"
+            android:textSize="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
@@ -122,6 +129,7 @@
             android:text="电话："/>
         <TextView
             android:id="@+id/tv_td_tel"
+            android:textSize="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
@@ -135,6 +143,7 @@
             android:text="邮箱："/>
         <TextView
             android:id="@+id/tv_td_email"
+            android:textSize="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
