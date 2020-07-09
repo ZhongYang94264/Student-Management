@@ -16,6 +16,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         useTable(db); //表
         userTable(db);//注册信息表
+        adminTable(db);//管理员表
     }
 
     @Override
@@ -98,6 +99,14 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 "birthday varchar," +
                 "tel varchar," +
                 "email varchar)";
+        db.execSQL(create_sql);
+    }
+
+    private void adminTable(SQLiteDatabase db) {
+        //教师注册表
+        String create_sql = "create table " + sqlData.TEACHER_ADMIN + " (_id integer primary key not null," +
+                "password varchar not null," +
+                "name varchar)";
         db.execSQL(create_sql);
     }
 }
