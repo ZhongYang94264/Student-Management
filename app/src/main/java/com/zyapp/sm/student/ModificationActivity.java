@@ -41,8 +41,8 @@ public class ModificationActivity extends Activity {
         setContentView(R.layout.activity_modification);
 
         //调用方法
-        initModification( );
-        setBtn( );
+        initModification(  );
+        setBtn(  );
     }
 
     //初始化
