@@ -56,7 +56,7 @@ public class TeacherRegisterActivity extends AppCompatActivity {
                 // 获取文本
                 mStr_teacher_name = et_teacher_name.getText().toString();//教师姓名
                 mStr_teacher_work_num = et_teacher_work_num.getText().toString();//教师工号
-                mStr_password = et_password.getText().toString();//密码
+                mStr_password = et_password.getText().toString( );//密码
                 mStr_confirm_password = et_teacher_confirm_pwd.getText().toString();// 确认密码
                 // 是否为空(判断处理信息)
                 if (mStr_teacher_name.equals("") || mStr_teacher_work_num.equals("") || mStr_password.equals("")

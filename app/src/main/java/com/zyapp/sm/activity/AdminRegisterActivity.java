@@ -3,17 +3,21 @@ package com.zyapp.sm.activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.zyapp.sm.R;
+import com.zyapp.sm.sql.DBOperate;
+import com.zyapp.sm.sql.sqlData;
 
 public class AdminRegisterActivity extends AppCompatActivity {
 
@@ -82,9 +86,33 @@ public class AdminRegisterActivity extends AppCompatActivity {
                     return;
                 }
                 //操作数据库
+                //1. 打开数据库
+                DBOperate dbOperate = new DBOperate();
+                dbOperate.OpenDB(AdminRegisterActivity.this);
+                //创建查询语句
+                String query_sql = "select * from " + sqlData.TEACHER_ADMIN + " where _id = '" + mStr_admin_account_num + "'";
+                //执行查询语句，返回一个游标
+                Cursor cursor = dbOperate.selectDB(query_sql);
+                //判断游标数量
+                if (cursor.getCount() > 0) {
+                    Toast.makeText(AdminRegisterActivity.this, "该账号已被注册", Toast.LENGTH_SHORT).show();
+                    return;
+                } else {
+                    //否则就执行插入语句
+                    //
+                    dbOperate.operationDB("insert into " + sqlData.TEACHER_ADMIN+ " (_id,name,password) " +
+                            "values ('" + mStr_admin_account_num + "', '" + mStr_register_code + "'," +
+                            "'" + mStr_confirm_password + "')");
+                    //跳转
+                    startActivity(new Intent(AdminRegisterActivity.this, AdminLoginActivity.class));
+                    //提示
+                    Toast.makeText(AdminRegisterActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
+                    //结束跳转
+                    finish();
+                }
 
-                //跳转
-                startActivity(new Intent(AdminRegisterActivity.this, AdminLoginActivity.class));
+                //关闭数据库
+                dbOperate.CloseDB();
             }
         });
         ib_help.setOnClickListener(new View.OnClickListener() {
