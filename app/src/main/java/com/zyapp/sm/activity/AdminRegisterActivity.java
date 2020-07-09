@@ -90,7 +90,7 @@ public class AdminRegisterActivity extends AppCompatActivity {
                 DBOperate dbOperate = new DBOperate();
                 dbOperate.OpenDB(AdminRegisterActivity.this);
                 //创建查询语句
-                String query_sql = "select * from " + sqlData.TEACHER_ADMIN + " where _id = '" + mStr_admin_account_num + "'";
+                String query_sql = "select * from " + sqlData.ADMIN_TABLE + " where _id = '" + mStr_admin_account_num + "'";
                 //执行查询语句，返回一个游标
                 Cursor cursor = dbOperate.selectDB(query_sql);
                 //判断游标数量
@@ -100,7 +100,7 @@ public class AdminRegisterActivity extends AppCompatActivity {
                 } else {
                     //否则就执行插入语句
                     //
-                    dbOperate.operationDB("insert into " + sqlData.TEACHER_ADMIN+ " (_id,name,password) " +
+                    dbOperate.operationDB("insert into " + sqlData.ADMIN_TABLE+ " (_id,name,password) " +
                             "values ('" + mStr_admin_account_num + "', '" + mStr_register_code + "'," +
                             "'" + mStr_confirm_password + "')");
                     //跳转
