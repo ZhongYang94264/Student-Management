@@ -55,7 +55,7 @@ public class ModificationActivity extends Activity {
     }
 
     //监听事件
-    public void setBtn( ){
+    public void setBtn(  ){
         btn_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
