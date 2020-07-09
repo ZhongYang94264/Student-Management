@@ -7,7 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.zyapp.sm.R;
 import com.zyapp.sm.teacher.base.BaseFragment;
@@ -25,6 +28,8 @@ import java.util.Objects;
 public class StudentFragment extends BaseFragment implements View.OnClickListener {
 
     private ImageView iv_search, iv_menu;
+    private LinearLayout layout_add_student, layout_add_class, layout_update_pwd, layout_exit;
+    private PopupWindow mPopupWindow;
 
     @Override
     protected int getRootViewResId() {
@@ -61,23 +66,62 @@ public class StudentFragment extends BaseFragment implements View.OnClickListene
         }
     }
 
-    @SuppressLint("ResourceAsColor")
     private void initPopupWindow(View v) {
         //加载布局
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.item_teacher_popupwindow, null,
                 false);
-        //初始化组件
-
         //构建一个PopupWindow,参数依次是 加载的View、宽、高
-        PopupWindow popupWindow = new PopupWindow(view, ViewGroup.LayoutParams.WRAP_CONTENT,
+        mPopupWindow = new PopupWindow(view, ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT, true);
-        //加载动画
-        //
-        popupWindow.setTouchable(true);
+        //初始化组件
+        layout_add_student = view.findViewById(R.id.layout_add_student);
+        layout_add_class = view.findViewById(R.id.layout_add_class);
+        layout_update_pwd = view.findViewById(R.id.layout_update_pwd);
+        layout_exit = view.findViewById(R.id.layout_exit);
+        //注册监听
+        layout_add_student.setOnClickListener(this);
+        layout_add_class.setOnClickListener(this);
+        layout_update_pwd.setOnClickListener(this);
+        layout_exit.setOnClickListener(this);
         //修改背景
-        popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        mPopupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        //
+        mPopupWindow.setOutsideTouchable(true);
+        mPopupWindow.setFocusable(true);
         //显示位置
-        popupWindow.showAsDropDown(v,50,0);
+        mPopupWindow.showAsDropDown(iv_menu, 50, 0);
+        //初始化弹窗子条目的点击事件
+        initListener();
+    }
 
+    private void initListener() {
+        layout_add_student.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "点击了添加学生", Toast.LENGTH_SHORT).show();
+                mPopupWindow.dismiss();
+            }
+        });
+        layout_add_class.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "点击了创建班级", Toast.LENGTH_SHORT).show();
+                mPopupWindow.dismiss();
+            }
+        });
+        layout_update_pwd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "点击了修改密码", Toast.LENGTH_SHORT).show();
+                mPopupWindow.dismiss();
+            }
+        });
+        layout_exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "点击了退出", Toast.LENGTH_SHORT).show();
+                mPopupWindow.dismiss();
+            }
+        });
     }
 }

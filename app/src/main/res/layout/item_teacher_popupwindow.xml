@@ -8,6 +8,7 @@
     android:paddingLeft="10dp">
 
     <LinearLayout
+        android:id="@+id/layout_add_student"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center">
@@ -31,6 +32,7 @@
 
 
     <LinearLayout
+        android:id="@+id/layout_add_class"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center">
@@ -53,6 +55,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/layout_update_pwd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center">
@@ -75,6 +78,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/layout_exit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center">

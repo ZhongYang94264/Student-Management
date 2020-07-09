@@ -22,7 +22,7 @@ public class TeacherLoginActivity extends AppCompatActivity implements View.OnCl
 
     private TextView tv_register;
     private Button btn_teacher_login;
-    private EditText et_account,et_pwd;
+    private EditText et_account, et_pwd;
     private String mStr_work_num;
 
     @Override
@@ -74,17 +74,17 @@ public class TeacherLoginActivity extends AppCompatActivity implements View.OnCl
                 dbOperate.OpenDB(TeacherLoginActivity.this);
                 //调用查询方法，判断用户是否存在
                 //创建查询语句
-                String login_sql = "select * from " + sqlData.ADMIN_TABLE + " where _id = '" + mStr_work_num + "'";
+                String login_sql = "select * from " + sqlData.TEACHER_TABLE + " where _id = '" + mStr_work_num + "'";
                 //执行查询语句，返回一个游标
                 Cursor cursor = dbOperate.selectDB(login_sql);
                 //判断游标数量
                 if (cursor.getCount() < 1) {
                     Toast.makeText(TeacherLoginActivity.this, "该账号未注册", Toast.LENGTH_SHORT).show();
                     return;
-                }
-                else {
+                } else {
                     //创建密码的查询语句
-                    String pass_sql = "select * from " + sqlData.ADMIN_TABLE + " where _id = '" + mStr_work_num + "' and password = '" + pas + "'";
+                    String pass_sql = "select * from " + sqlData.TEACHER_TABLE + " where _id = '" + mStr_work_num + "' " +
+                            "and password = '" + pas + "'";
                     //执行查询语句，返回一个游标
                     Cursor cursors = dbOperate.selectDB(pass_sql);
                     //判断游标数量
@@ -92,8 +92,7 @@ public class TeacherLoginActivity extends AppCompatActivity implements View.OnCl
                         Intent t_a_intent = new Intent(TeacherLoginActivity.this, TeacherActivity.class);
                         t_a_intent.putExtra("work_num", mStr_work_num);
                         startActivity(t_a_intent);
-                    }
-                    else {
+                    } else {
                         Toast.makeText(TeacherLoginActivity.this, "密码错误", Toast.LENGTH_SHORT).show();
                         return;
                     }
