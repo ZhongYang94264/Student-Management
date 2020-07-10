@@ -53,7 +53,9 @@ public class MyStudentFragment extends BaseFragment {
         //实例化适配器
         StudentAdapter adapter = new StudentAdapter(getActivity(), R.layout.item_li_student, mStudentData);
         //设置适配器
-        li_my_student.setAdapter(adapter);
+        if (li_my_student != null) {
+            li_my_student.setAdapter(adapter);
+        }
     }
 
     /**

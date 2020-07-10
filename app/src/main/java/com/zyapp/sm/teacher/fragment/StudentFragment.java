@@ -18,6 +18,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.zyapp.sm.R;
+import com.zyapp.sm.activity.AddClassActivity;
 import com.zyapp.sm.activity.AddStudentActivity;
 import com.zyapp.sm.teacher.base.BaseFragment;
 
@@ -33,7 +34,7 @@ import java.util.Objects;
  */
 public class StudentFragment extends BaseFragment implements View.OnClickListener {
 
-    private ImageView iv_search, iv_menu;
+    private ImageView iv_menu;
     private LinearLayout layout_add_student, layout_add_class, layout_update_pwd, layout_exit, layout_my_student,
             layout_my_class;
     private PopupWindow mPopupWindow;
@@ -62,6 +63,7 @@ public class StudentFragment extends BaseFragment implements View.OnClickListene
         Bundle bundle = new Bundle();
         bundle.putString("work_num", mWork_num);
         mStudentFragment.setArguments(bundle);
+        mClassFragment.setArguments(bundle);
     }
 
     /**
@@ -160,7 +162,10 @@ public class StudentFragment extends BaseFragment implements View.OnClickListene
         layout_add_class.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "点击了创建班级", Toast.LENGTH_SHORT).show();
+                //跳转到添加学生界面
+                Intent a_intent = new Intent(getActivity(), AddClassActivity.class);
+                a_intent.putExtra("work_num", mWork_num);
+                startActivity(a_intent);
                 mPopupWindow.dismiss();
             }
         });

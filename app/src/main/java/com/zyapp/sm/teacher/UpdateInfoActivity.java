@@ -5,6 +5,7 @@ import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,6 +21,7 @@ import com.zyapp.sm.R;
 import com.zyapp.sm.sql.DBOperate;
 import com.zyapp.sm.sql.sqlData;
 import com.zyapp.sm.teacher.array.data;
+import com.zyapp.sm.teacher.fragment.MyFragment;
 
 import java.util.Calendar;
 
@@ -158,7 +160,7 @@ public class UpdateInfoActivity extends AppCompatActivity {
      * @param view
      */
     public void backOnClick(View view) {
-        this.finish();
+        finish();
     }
 
     /**
@@ -292,7 +294,8 @@ public class UpdateInfoActivity extends AppCompatActivity {
                                         android.R.layout.simple_spinner_item, data.cj6_curriculum);
                                 adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
                                 sp_curriculum.setAdapter(adapter);
-                            }if (sp_department.getSelectedItem().toString().equals("马克思主义学院")) {
+                            }
+                            if (sp_department.getSelectedItem().toString().equals("马克思主义学院")) {
                                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
                                         android.R.layout.simple_spinner_item, data.cj7_curriculum);
                                 adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
@@ -353,7 +356,8 @@ public class UpdateInfoActivity extends AppCompatActivity {
                                         android.R.layout.simple_spinner_item, data.wl6_curriculum);
                                 adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);
                                 sp_curriculum.setAdapter(adapter);
-                            }if (sp_department.getSelectedItem().toString().equals("土木工程学院")) {
+                            }
+                            if (sp_department.getSelectedItem().toString().equals("土木工程学院")) {
                                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(UpdateInfoActivity.this,
                                         android.R.layout.simple_spinner_item, data.wl7_curriculum);
                                 adapter.setDropDownViewResource(R.layout.item_teacher_spinner_text);

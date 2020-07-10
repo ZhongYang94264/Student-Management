@@ -16,6 +16,7 @@ public class sqlData {
     public static final String STUDENT_COU = "t_student_course"; //学生课程表
     public static final String TOTAL = "t_total"; //学生总分表
     public static final String WORD = "t_word"; //作业表
-    public static final String TEACHER_TABLE = "t_teacher";
-    public static final String ADMIN_TABLE="t_admin";
+    public static final String TEACHER_TABLE = "t_teacher";//教师表
+    public static final String CLASS_TABLE = "t_class";
+    public static final String ADMIN_TABLE = "t_admin";
 }

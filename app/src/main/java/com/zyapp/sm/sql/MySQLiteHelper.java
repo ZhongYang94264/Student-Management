@@ -104,6 +104,12 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 "tel varchar," +
                 "email varchar)";
         db.execSQL(create_sql);
+        //教师班级表
+        String create_class_sql = "create table " + sqlData.CLASS_TABLE + " (_id varchar primary key not null," +
+                "class_name varchar," +
+                "class_num varchar," +
+                "teacher_id varchar)";
+        db.execSQL(create_class_sql);
     }
 
     private void adminTable(SQLiteDatabase db) {
