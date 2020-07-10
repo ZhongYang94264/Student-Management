@@ -37,7 +37,8 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 "school VARCHAR," +
                 "department VARCHAR," +
                 "proClass VARCHAR ," +
-                "genre VARCHAR ) ";
+                "genre VARCHAR," +
+                "teacher_id ) ";
 
         db.execSQL(CREATE_STUDENT);
 
@@ -60,17 +61,19 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 "('2018000227','大学英语',74,'李倩') ";
         db.execSQL(INSERT_STUDENT_COU);
     }
+
     //总分表
-    private  void totalTable(SQLiteDatabase db){
+    private void totalTable(SQLiteDatabase db) {
         String CRETE_TOTAL = "create table " + sqlData.TOTAL + " (stuId VARCHAR primary key, total VARCHAR)";
         db.execSQL(CRETE_TOTAL);
 
         String INSERT_TOTAL = "insert into " + sqlData.TOTAL + " values " +
                 "('2018000649','70')," +
-                "('2018000227','72')" ;
+                "('2018000227','72')";
         db.execSQL(INSERT_TOTAL);
 
     }
+
     //作业表
     private void wordTable(SQLiteDatabase db) {
         //作业表

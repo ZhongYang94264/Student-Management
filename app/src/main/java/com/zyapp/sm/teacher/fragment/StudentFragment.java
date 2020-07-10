@@ -1,6 +1,7 @@
 package com.zyapp.sm.teacher.fragment;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.zyapp.sm.R;
+import com.zyapp.sm.activity.AddStudentActivity;
 import com.zyapp.sm.teacher.base.BaseFragment;
 
 import java.util.Objects;
@@ -30,6 +32,7 @@ public class StudentFragment extends BaseFragment implements View.OnClickListene
     private ImageView iv_search, iv_menu;
     private LinearLayout layout_add_student, layout_add_class, layout_update_pwd, layout_exit;
     private PopupWindow mPopupWindow;
+    private String mWork_num;
 
     @Override
     protected int getRootViewResId() {
@@ -41,6 +44,8 @@ public class StudentFragment extends BaseFragment implements View.OnClickListene
         super.onStart();
         //初始化控件
         initView();
+        //接收教师工号
+        mWork_num = getArguments().getString("work_num");
     }
 
     /**
@@ -78,11 +83,6 @@ public class StudentFragment extends BaseFragment implements View.OnClickListene
         layout_add_class = view.findViewById(R.id.layout_add_class);
         layout_update_pwd = view.findViewById(R.id.layout_update_pwd);
         layout_exit = view.findViewById(R.id.layout_exit);
-        //注册监听
-        layout_add_student.setOnClickListener(this);
-        layout_add_class.setOnClickListener(this);
-        layout_update_pwd.setOnClickListener(this);
-        layout_exit.setOnClickListener(this);
         //修改背景
         mPopupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         //
@@ -98,7 +98,10 @@ public class StudentFragment extends BaseFragment implements View.OnClickListene
         layout_add_student.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "点击了添加学生", Toast.LENGTH_SHORT).show();
+                //跳转到添加学生界面
+                Intent a_intent = new Intent(getActivity(), AddStudentActivity.class);
+                a_intent.putExtra("work_num", mWork_num);
+                startActivity(a_intent);
                 mPopupWindow.dismiss();
             }
         });
