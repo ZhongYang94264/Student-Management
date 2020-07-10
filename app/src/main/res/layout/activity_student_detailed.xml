@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_margin="50dp"
-    tools:context=".admin.TeacherDetailed">
+    tools:context=".admin.StudentDetailed">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,7 +23,7 @@
             android:textSize="30dp"
             android:text="姓名："/>
         <TextView
-            android:id="@+id/tv_td_name"
+            android:id="@+id/tv_sd_name"
             android:textSize="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -38,7 +38,7 @@
             android:textSize="30dp"
             android:text="I    D："/>
         <TextView
-            android:id="@+id/tv_td_id"
+            android:id="@+id/tv_sd_id"
             android:textSize="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -53,7 +53,7 @@
             android:textSize="30dp"
             android:text="学校："/>
         <TextView
-            android:id="@+id/tv_td_school"
+            android:id="@+id/tv_sd_school"
             android:textSize="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -66,9 +66,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="30dp"
-            android:text="部门："/>
+            android:text="院系："/>
         <TextView
-            android:id="@+id/tv_td_department"
+            android:id="@+id/tv_sd_department"
             android:textSize="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -81,9 +81,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="30dp"
-            android:text="课程："/>
+            android:text="班级："/>
         <TextView
-            android:id="@+id/tv_td_curriculum"
+            android:id="@+id/tv_sd_proClass"
             android:textSize="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -98,7 +98,7 @@
             android:textSize="30dp"
             android:text="性别："/>
         <TextView
-            android:id="@+id/tv_td_gender"
+            android:id="@+id/tv_sd_sex"
             android:textSize="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -111,51 +111,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="30dp"
-            android:text="生日："/>
-        <TextView
-            android:id="@+id/tv_td_birthday"
-            android:textSize="30dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+            android:layout_gravity="center_vertical"
+            android:text="在校状态："/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
+        <ToggleButton
+            android:id="@+id/tb_sd_genre"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="30dp"
-            android:text="电话："/>
-        <TextView
-            android:id="@+id/tv_td_tel"
-            android:textSize="30dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="30dp"
-            android:text="邮箱："/>
-        <TextView
-            android:id="@+id/tv_td_email"
-            android:textSize="30dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:textOff="在校"
+            android:textOn="离校"/>
     </LinearLayout>
     <Button
         android:layout_marginTop="20dp"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:background="#FF0000"
+        android:background="#0040FF"
         android:textColor="#fff"
         android:layout_gravity="center"
         android:textSize="20dp"
-        android:text="删除教师"
-        android:onClick="delete"/>
-
+        android:text="修改信息"
+        android:onClick="change"/>
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="#918989"
+        android:textColor="#fff"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:text="取        消"
+        android:onClick="cancel"/>
 </LinearLayout>

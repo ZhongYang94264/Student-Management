@@ -11,9 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".admin.TeacherDetailed"></activity>
+        <activity android:name=".admin.TeacherDetailed"/>
         <activity android:name=".teacher.UpdateInfoActivity" />
         <!-- 学生管理 -->
+        <activity android:name=".admin.StudentDetailed"/> <!-- 学生管理 -->
         <activity
             android:name=".student.StudentActivity"
             android:label="@string/app_name" />

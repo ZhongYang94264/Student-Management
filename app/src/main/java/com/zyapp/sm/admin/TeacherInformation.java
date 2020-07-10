@@ -29,7 +29,6 @@ public class TeacherInformation extends Activity {
         setContentView(R.layout.activity_teacher_information);
 
 
-
         lv_t_info=findViewById(R.id.lv_t_info);
         ed_teacher_name=findViewById(R.id.ed_teacher_name);
         display("");
@@ -82,9 +81,7 @@ public class TeacherInformation extends Activity {
                 Intent intent = new Intent(TeacherInformation.this,TeacherDetailed.class);
                 intent.putExtra("id",tv.getText().toString());
                 startActivity(intent);
-                TeacherInformation.this.finish();
             }
         });
-
     }
 }
