@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.core.content.ContextCompat;
+
 import com.zyapp.sm.R;
 import com.zyapp.sm.activity.StudentLoginActivity;
 import com.zyapp.sm.sql.DBOperate;

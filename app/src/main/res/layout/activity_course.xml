@@ -10,16 +10,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@mipmap/bg_text_title"
+        android:gravity="center"
         android:text="我的学习"
-        android:textSize="25dp"
         android:textColor="@color/colorStudent"
-        android:gravity="center"/>
+        android:textSize="25dp" />
 
 
     <ListView
         android:id="@+id/lv_course"
-        android:layout_margin="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp" />
 
 </LinearLayout>

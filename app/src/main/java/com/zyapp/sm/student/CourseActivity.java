@@ -1,5 +1,6 @@
 package com.zyapp.sm.student;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
@@ -11,6 +12,8 @@ import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
 
 import com.zyapp.sm.R;
 import com.zyapp.sm.activity.StudentLoginActivity;
@@ -37,9 +40,12 @@ public class CourseActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course);
+
         AddDate();
-        Log.d(TAG, "出来 ");
+
     }
+
+
 
 
     /*

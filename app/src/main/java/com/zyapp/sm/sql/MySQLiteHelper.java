@@ -19,6 +19,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         adminTable(db);//管理员表
         scoreTable(db);
         wordTable(db);
+        totalTable(db);
     }
 
     @Override
@@ -59,19 +60,17 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 "('2018000227','大学英语',74,'李倩') ";
         db.execSQL(INSERT_STUDENT_COU);
     }
+    //总分表
+    private  void totalTable(SQLiteDatabase db){
+        String CRETE_TOTAL = "create table " + sqlData.TOTAL + " (stuId VARCHAR primary key, total VARCHAR)";
+        db.execSQL(CRETE_TOTAL);
 
-//    //老师授课表  课程名，老师id，授课班级
-//    private void lesTable(SQLiteDatabase db) {
-//        String CREATE_TEACHER_LES = "create table " + sqlData.TEACHER_LES + "(lesName VARCHAR,Id VARCHAR,class VARCHAR) ";
-//        db.execSQL(CREATE_TEACHER_LES);
-//
-//        String INSERT_TEACHER_LES = " insert into " + sqlData.TEACHER_LES + " values " +
-//                "('java基础','5411001','软件技术ZK1801')," +
-//                "('安卓实训','5411002','软件技术ZK1802')," +
-//                "('php开发','5411001','软件技术ZK1801')," +
-//                "('大学英语','5411003','软件技术ZK1802')";
-//        db.execSQL(INSERT_TEACHER_LES);
-//    }
+        String INSERT_TOTAL = "insert into " + sqlData.TOTAL + " values " +
+                "('2018000649','70')," +
+                "('2018000227','72')" ;
+        db.execSQL(INSERT_TOTAL);
+
+    }
     //作业表
     private void wordTable(SQLiteDatabase db) {
         //作业表

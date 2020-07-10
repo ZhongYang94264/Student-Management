@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import androidx.core.content.ContextCompat;
+
 import com.zyapp.sm.R;
 import com.zyapp.sm.activity.AdminRegisterActivity;
 import com.zyapp.sm.activity.StudentLoginActivity;

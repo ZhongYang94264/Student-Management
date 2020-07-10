@@ -19,6 +19,7 @@
         android:id="@+id/btn_course"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/btn_stu"
         android:layout_margin="20dp"
         android:text="我的课程"
         android:textSize="20dp"/>
@@ -27,6 +28,7 @@
         android:id="@+id/btn_word"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/btn_stu"
         android:text="我的作业"
         android:textSize="20dp"
         android:layout_margin="20dp"/>
@@ -35,6 +37,7 @@
         android:id="@+id/btn_information"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/btn_stu"
         android:text="个人信息"
         android:textSize="20dp"
         android:layout_margin="20dp"/>
@@ -43,6 +46,7 @@
         android:id="@+id/btn_modification"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/btn_stu"
         android:text="修改密码"
         android:textSize="20dp"
         android:layout_margin="20dp"/>
@@ -51,6 +55,7 @@
         android:id="@+id/btn_out"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/btn_stu"
         android:text="退出"
         android:textSize="20dp"
         android:layout_margin="20dp"/>

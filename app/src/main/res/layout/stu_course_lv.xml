@@ -54,7 +54,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="40dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -91,22 +91,10 @@
                     android:textSize="14dp"/>
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="进度条"/>
 
             </LinearLayout>
 
 
         </LinearLayout>
-
-
-    </LinearLayout>
 
 </LinearLayout>

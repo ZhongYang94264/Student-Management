@@ -13,9 +13,8 @@ public class sqlData {
     public static final String DATABASE = "Info.db"; //数据库名
     public static final int VERSION = 1;//版本号
     public static final String STUDENT = "t_student"; //学生表
-    public static final String LESSONS = "t_lessons"; //科目表
     public static final String STUDENT_COU = "t_student_course"; //学生课程表
-    public static final String TEACHER_LES = "t_teacher_les"; //老师授课表
+    public static final String TOTAL = "t_total"; //学生总分表
     public static final String WORD = "t_word"; //作业表
     public static final String TEACHER_TABLE = "t_teacher";
     public static final String ADMIN_TABLE="t_admin";

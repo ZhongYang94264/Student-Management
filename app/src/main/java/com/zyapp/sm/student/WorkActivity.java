@@ -8,6 +8,7 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.zyapp.sm.R;
 import com.zyapp.sm.activity.StudentLoginActivity;
@@ -23,13 +24,16 @@ public class WorkActivity extends AppCompatActivity {
     private static final String TAG = "WorkActivity";
     ListView lv_stuWork;
 
-    TextView tv_stuWordName;//作业名称
-    TextView tv_stuWordTime,tv_stuCourse,btn_word;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_work);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         AddDate();
     }
 

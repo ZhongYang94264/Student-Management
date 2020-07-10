@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
+import androidx.core.content.ContextCompat;
+
 import com.zyapp.sm.R;
 import com.zyapp.sm.activity.StudentLoginActivity;
 import com.zyapp.sm.sql.DBOperate;
@@ -24,13 +26,13 @@ public class InformationActivity extends Activity {
     TextView tv_stuSex;//性别，出生日期
 
     //从数据库获取的信息
-    String[] stu = new String[8]; //除去日期
+    String[] stu = new String[8];
+    String score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_information);
-        Log.d(TAG,"显示：" + stu[0]);
         initInformation();
         setData();
     }
@@ -57,12 +59,15 @@ public class InformationActivity extends Activity {
         Cursor cursor = dbOperate.selectDB(sql);
 
         //分数
-        String sql1 = "SELECT AVG(stuScore) FROM " + sqlData.STUDENT_COU + " WHERE _id = ' " + StudentLoginActivity.stuId + " '";
+        String sql1 = "select * from " + sqlData.TOTAL + " where stuId = '" + StudentLoginActivity.stuId + "' ";
+
         Cursor cursor1 = dbOperate.selectDB(sql1);
+        Log.d(TAG,"分数 ==>" +  cursor1);
+
         //获取
         while (cursor1.moveToNext()){
-            Log.d(TAG,"显示：有数据" );
-            //String score = cursor1.getString(cursor.getColumnIndex("ag"));
+            score = cursor1.getString(1);
+            Log.d(TAG,"分数 ==>" +  score);
 
         }
 
@@ -88,7 +93,7 @@ public class InformationActivity extends Activity {
         tv_profession.setText(stu[6]); //班级
         tv_stuGenre.setText(stu[7]);
 
-        tv_stuScore.setText(null); //分数
+        tv_stuScore.setText(score); //分数
 
         dbOperate.CloseDB();
 

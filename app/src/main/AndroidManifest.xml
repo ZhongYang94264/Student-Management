@@ -12,30 +12,39 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".admin.TeacherDetailed"></activity>
-        <activity android:name=".teacher.UpdateInfoActivity" /> <!-- 学生管理 -->
+        <activity android:name=".teacher.UpdateInfoActivity" />
+        <!-- 学生管理 -->
         <activity
             android:name=".student.StudentActivity"
-            android:label="@string/app_name" /> <!-- 修改密码 -->
+            android:label="@string/app_name" />
+        <!-- 修改密码 -->
         <activity
             android:name=".student.ModificationActivity"
-            android:label="@string/app_name" /> <!-- 个人信息 -->
+            android:label="@string/app_name"  />
+        <!-- 个人信息 -->
         <activity
             android:name=".student.InformationActivity"
-            android:label="@string/app_name" /> <!-- 我的作业 -->
+            android:label="@string/app_name" />
+        <!-- 我的作业 -->
         <activity
             android:name=".student.WorkActivity"
-            android:label="@string/app_name" /> <!-- 我的课程 -->
+            android:label="@string/app_name" />
+        <!-- 我的课程 -->
         <activity
             android:name=".student.CourseActivity"
-            android:label="@string/app_name" /> <!-- 管理员 -->
+            android:label="@string/app_name" />
+
+        <!-- 管理员 -->
         <activity android:name=".admin.AdministratorsActivity" />
         <activity android:name=".admin.Information" />
         <activity android:name=".admin.StudentInformation" />
-        <activity android:name=".admin.TeacherInformation" /> <!-- 老师 -->
+        <activity android:name=".admin.TeacherInformation" />
+        <!-- 老师 -->
         <activity android:name=".teacher.TeacherActivity" />
         <activity android:name=".activity.StudentLoginActivity" />
         <activity android:name=".activity.TeacherLoginActivity" />
-        <activity android:name=".activity.AdminLoginActivity" /> <!-- 开始跳转 -->
+        <activity android:name=".activity.AdminLoginActivity" />
+        <!-- 开始跳转 -->
         <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
