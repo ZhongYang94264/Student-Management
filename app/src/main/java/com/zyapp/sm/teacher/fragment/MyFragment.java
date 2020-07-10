@@ -50,7 +50,9 @@ public class MyFragment extends BaseFragment implements View.OnClickListener {
         //register listener
         btn_update.setOnClickListener(this);
         //接收工号
-        mWork_num = getArguments().getString("work_num");
+        if (getArguments() != null) {
+            mWork_num = getArguments().getString("work_num");
+        }
         Log.d(TAG, "接收到工号 ==> " + mWork_num);
         //检索数据库
         initDatabase();

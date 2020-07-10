@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:padding="15dp">
+
+    <ImageView
+        android:id="@+id/iv_li_head"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="50dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_student_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:text="张三"
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_student_class"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="软件技术K1801"
+            android:textColor="@color/text_colorGreyFont"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,9 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.zyapp.sm.R;
 import com.zyapp.sm.activity.AddStudentActivity;
@@ -30,9 +34,13 @@ import java.util.Objects;
 public class StudentFragment extends BaseFragment implements View.OnClickListener {
 
     private ImageView iv_search, iv_menu;
-    private LinearLayout layout_add_student, layout_add_class, layout_update_pwd, layout_exit;
+    private LinearLayout layout_add_student, layout_add_class, layout_update_pwd, layout_exit, layout_my_student,
+            layout_my_class;
     private PopupWindow mPopupWindow;
     private String mWork_num;
+    private MyStudentFragment mStudentFragment;
+    private MyClassFragment mClassFragment;
+    private FragmentManager mFm;
 
     @Override
     protected int getRootViewResId() {
@@ -45,7 +53,27 @@ public class StudentFragment extends BaseFragment implements View.OnClickListene
         //初始化控件
         initView();
         //接收教师工号
-        mWork_num = getArguments().getString("work_num");
+        if (getArguments() != null) {
+            mWork_num = getArguments().getString("work_num");
+        }
+        //初始化碎片
+        initFragment();
+        //传递工号
+        Bundle bundle = new Bundle();
+        bundle.putString("work_num", mWork_num);
+        mStudentFragment.setArguments(bundle);
+    }
+
+    /**
+     *
+     */
+    private void initFragment() {
+        mStudentFragment = new MyStudentFragment();
+        mClassFragment = new MyClassFragment();
+        //拿到开启事务的支持包
+        mFm = getActivity().getSupportFragmentManager();
+        //设置默认显示页
+        switchFragment(mStudentFragment);
     }
 
     /**
@@ -53,8 +81,12 @@ public class StudentFragment extends BaseFragment implements View.OnClickListene
      */
     private void initView() {
         iv_menu = Objects.requireNonNull(getActivity()).findViewById(R.id.iv_menu);
+        layout_my_student = getActivity().findViewById(R.id.layout_my_student);
+        layout_my_class = getActivity().findViewById(R.id.layout_my_class);
         //注册监听
         iv_menu.setOnClickListener(this);
+        layout_my_student.setOnClickListener(this);
+        layout_my_class.setOnClickListener(this);
     }
 
     /**
@@ -68,7 +100,27 @@ public class StudentFragment extends BaseFragment implements View.OnClickListene
                 break;
             case R.id.iv_search:
                 break;
+            case R.id.layout_my_student:
+                switchFragment(mStudentFragment);
+                break;
+            case R.id.layout_my_class:
+                switchFragment(mClassFragment);
+                break;
         }
+    }
+
+    /**
+     * @param studentFragment
+     */
+    private void switchFragment(BaseFragment studentFragment) {
+        //开启事务
+        FragmentTransaction transaction = mFm.beginTransaction();
+
+        //切换
+        transaction.replace(R.id.fl_student, studentFragment);
+
+        //提交事务
+        transaction.commit();
     }
 
     private void initPopupWindow(View v) {
