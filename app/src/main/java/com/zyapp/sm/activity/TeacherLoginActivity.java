@@ -3,6 +3,8 @@ package com.zyapp.sm.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -20,7 +22,7 @@ import com.zyapp.sm.teacher.TeacherActivity;
 
 public class TeacherLoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView tv_register;
+    private TextView tv_register,tv_F_password;
     private Button btn_teacher_login;
     private EditText et_account, et_pwd;
     private String mStr_work_num;
@@ -47,11 +49,13 @@ public class TeacherLoginActivity extends AppCompatActivity implements View.OnCl
         btn_teacher_login = findViewById(R.id.btn_teacher_login);
         et_account = findViewById(R.id.et_admin_account_num);
         et_pwd = findViewById(R.id.et_teacher_password);
+        tv_F_password = findViewById(R.id.tv_F_password);
         //注册监听
         tv_register.setOnClickListener(this);
         btn_teacher_login.setOnClickListener(this);
         et_account.setOnClickListener(this);
         et_pwd.setOnClickListener(this);
+        tv_F_password.setOnClickListener(this);
     }
 
     /**
@@ -103,6 +107,21 @@ public class TeacherLoginActivity extends AppCompatActivity implements View.OnCl
             case R.id.tv_register:
                 startActivity(new Intent(TeacherLoginActivity.this, TeacherRegisterActivity.class));
                 break;
+            case R.id.tv_F_password:
+                getDialog("错误","请找管理员重置密码");
+                break;
         }
+    }
+
+    public void getDialog(final String title, String str) {
+        new AlertDialog.Builder(TeacherLoginActivity.this).setTitle(title)
+                .setMessage(str)
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //关闭对话框
+                        dialog.dismiss();
+                    }
+                }).show();
     }
 }

@@ -34,6 +34,7 @@
             android:layout_marginRight="20dp"
             android:background="@color/colorBlack" />
 
+
         <EditText
 
             android:id="@+id/et_register_code"
@@ -45,8 +46,7 @@
             android:inputType="number"
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
-            android:textColor="@color/colorBlack"/>
-
+            android:textColor="@color/colorBlack" />
 
         <ImageButton
             android:id="@+id/ib_help"
