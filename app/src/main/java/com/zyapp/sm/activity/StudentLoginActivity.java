@@ -58,8 +58,6 @@ public class StudentLoginActivity extends AppCompatActivity implements View.OnCl
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_student_login:
-
-
                 break;
             case R.id.tv_student_help:
                 new AlertDialog.Builder(this)
