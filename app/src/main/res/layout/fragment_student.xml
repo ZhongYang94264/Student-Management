@@ -23,17 +23,9 @@
             android:textSize="20sp" />
 
         <ImageView
-            android:id="@+id/iv_search"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_centerVertical="true"
-            android:layout_toStartOf="@+id/iv_menu"
-            android:src="@mipmap/icon_search_normal" />
-
-        <ImageView
             android:id="@+id/iv_menu"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="30dp"

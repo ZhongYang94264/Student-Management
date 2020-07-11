@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.AddClassActivity"></activity>
+        <activity android:name=".activity.AddAchievementActivity"></activity>
+        <activity android:name=".activity.AddClassActivity" />
         <activity android:name=".activity.AddStudentActivity" />
         <activity android:name=".admin.TeacherDetailed" />
         <activity android:name=".teacher.UpdateInfoActivity" /> <!-- 学生管理 -->

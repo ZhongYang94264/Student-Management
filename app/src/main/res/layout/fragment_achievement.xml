@@ -2,15 +2,96 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorStudent"
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/top_title"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="成绩界面"
-        android:textColor="@color/colorWhite"
-        android:textSize="30sp" />
+        android:background="@color/colorTeacher"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="学生成绩"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/iv_add_achievement"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="30dp"
+            android:src="@mipmap/icon_add_achievement" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="名次"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="3px"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlack" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="姓名"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="3px"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlack" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="学号"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="3px"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlack" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="总分"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/li_achievement"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>
