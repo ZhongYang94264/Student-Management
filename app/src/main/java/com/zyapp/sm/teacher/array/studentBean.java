@@ -55,4 +55,5 @@ public class studentBean {
     public String getType() {
         return type;
     }
-}
+    }
+
