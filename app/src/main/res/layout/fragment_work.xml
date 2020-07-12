@@ -23,8 +23,8 @@
 
         <ImageView
             android:id="@+id/iv_publish_job"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_centerVertical="true"
             android:layout_marginStart="30dp"
             android:layout_toStartOf="@+id/iv_establish_curriculum"
@@ -81,7 +81,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#FBCFD0"
+            android:background="@drawable/bg_work_title_left"
             android:gravity="center"
             android:orientation="vertical"
             android:padding="5dp">
@@ -105,7 +105,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#C8EFD4"
+            android:background="@drawable/bg_work_title_right"
             android:gravity="center"
             android:orientation="vertical"
             android:padding="5dp">

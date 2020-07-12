@@ -55,11 +55,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         String CRETE_TOTAL = "create table " + sqlData.TOTAL + " (stuId VARCHAR primary key, total VARCHAR)";
         db.execSQL(CRETE_TOTAL);
 
-        String INSERT_TOTAL = "insert into " + sqlData.TOTAL + " values " +
-                "('2018000649','70')," +
-                "('2018000227','72')";
-        db.execSQL(INSERT_TOTAL);
-
     }
 
     //作业表
@@ -71,12 +66,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 "time DATETIME ," +
                 "teacherId VARCHAR ) ";
         db.execSQL(CREATE_WORD);
-
-        String INSERT_WORD = " insert into " + sqlData.WORK + " values " +
-                "('2018000649','Android课后练习','安卓实训','2020-07-03 15:21:26','5411002')," +
-                "('2018000649','冒泡排序','java基础','2020-07-03 15:21:26','541101')," +
-                "('2018000227','java课后练习','java基础','2020-07-03 15:21:26','5411001') ";
-        db.execSQL(INSERT_WORD);
 
     }
 

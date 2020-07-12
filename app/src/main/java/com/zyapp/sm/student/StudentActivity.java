@@ -29,11 +29,11 @@ public class StudentActivity extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student);
-        //初始化
-        initStudent();
         //接收学号
         mStudent_id = getIntent().getStringExtra("student_id");
-        Log.d(TAG, "接收到学号 ==> " + mStudent_id);
+        Log.d(TAG, "学生界面接收到学号 ==> " + mStudent_id);
+        //初始化
+        initStudent();
     }
 
     public void initStudent() {

@@ -9,6 +9,6 @@
         android:id="@+id/li_my_class"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#D3D5F5" />
+        android:background="#FFE5D4" />
 
 </LinearLayout>

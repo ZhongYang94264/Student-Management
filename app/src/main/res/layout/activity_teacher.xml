@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="2px"
         android:layout_above="@+id/bnv_TA_bottom"
-        android:background="#A2A2A2" />
+        android:background="#CECECE" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bnv_TA_bottom"

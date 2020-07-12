@@ -31,14 +31,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="46dp"
                 android:layout_marginTop="48dp"
-                android:background="@mipmap/student_head"/>
+                android:background="@mipmap/student_head" />
+
             <View
                 android:layout_width="2dp"
                 android:layout_height="90dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="50dp"
-                android:background="#fff"/>
-
+                android:background="#fff" />
 
 
             <LinearLayout
@@ -98,9 +98,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="47dp"
-            android:layout_marginTop="50dp"
-            android:orientation="horizontal">
+            android:layout_margin="50dp">
 
             <TextView
                 android:id="@+id/tv1"
@@ -123,10 +121,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/tv_stuScore"
-                android:layout_marginLeft="140dp"
+                android:layout_marginLeft="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@+id/tv_stuScore"
                 android:text="分"
-                android:textColor="#fff"
+                android:textColor="@color/colorWhite"
                 android:textSize="20dp" />
 
         </RelativeLayout>
@@ -285,7 +284,6 @@
             android:layout_width="match_parent"
             android:layout_height="3dp"
             android:background="@drawable/shape_segmentation" />
-
 
 
     </LinearLayout>

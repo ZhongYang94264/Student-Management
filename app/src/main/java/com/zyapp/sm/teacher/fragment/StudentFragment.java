@@ -20,6 +20,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.zyapp.sm.R;
 import com.zyapp.sm.activity.AddClassActivity;
 import com.zyapp.sm.activity.AddStudentActivity;
+import com.zyapp.sm.teacher.TeacherUpdatePwdActivity;
 import com.zyapp.sm.teacher.base.BaseFragment;
 
 import java.util.Objects;
@@ -172,14 +173,16 @@ public class StudentFragment extends BaseFragment implements View.OnClickListene
         layout_update_pwd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "点击了修改密码", Toast.LENGTH_SHORT).show();
+                Intent t_intent = new Intent(getActivity(), TeacherUpdatePwdActivity.class);
+                t_intent.putExtra("work_num", mWork_num);
+                startActivity(t_intent);
                 mPopupWindow.dismiss();
             }
         });
         layout_exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "点击了退出", Toast.LENGTH_SHORT).show();
+                Objects.requireNonNull(getActivity()).finish();
                 mPopupWindow.dismiss();
             }
         });

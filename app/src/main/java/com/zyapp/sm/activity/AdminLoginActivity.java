@@ -5,13 +5,16 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
+import android.text.method.TransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -26,9 +29,11 @@ public class AdminLoginActivity extends AppCompatActivity implements View.OnClic
 
     private TextView tv_register;
     private Button btn_login;
-    private EditText et_login, et_psaa;
+    private EditText et_login, et_pwd;
     private SharedPreferences sp;
     private CheckBox cb_A_password;
+    private ImageButton ib_S_password;
+    private boolean v_flag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,21 +59,24 @@ public class AdminLoginActivity extends AppCompatActivity implements View.OnClic
         btn_login.setOnClickListener(this);
         tv_register.setOnClickListener(this);
         et_login = findViewById(R.id.et_admin_account_num);
-        et_psaa = findViewById(R.id.et_admin_password);
+        et_pwd = findViewById(R.id.et_admin_password);
         et_login.setOnClickListener(this);
-        et_psaa.setOnClickListener(this);
-        cb_A_password=findViewById(R.id.cb_A_password);
+        et_pwd.setOnClickListener(this);
+        cb_A_password = findViewById(R.id.cb_A_password);
+        ib_S_password = findViewById(R.id.ib_S_password);
+        ib_S_password.setOnClickListener(this);
         sp = this.getSharedPreferences("user", Context.MODE_PRIVATE);
     }
 
-    private void Remember () {//记住密码
+    private void Remember() {//记住密码
         if (sp.getBoolean("admin", false)) {
             et_login.setText(sp.getString("key_admin_user", null));
-            et_psaa.setText(sp.getString("key_admin_pwd", null));
+            et_pwd.setText(sp.getString("key_admin_pwd", null));
             //默认勾选
             cb_A_password.setChecked(true);
         }
     }
+
     /**
      * 实现监听接口
      *
@@ -79,7 +87,7 @@ public class AdminLoginActivity extends AppCompatActivity implements View.OnClic
         switch (v.getId()) {
             case R.id.btn_admin_login:
                 String login = et_login.getText().toString();
-                String pass = et_psaa.getText().toString();
+                String pass = et_pwd.getText().toString();
                 if ("".equals(login) || "".equals(pass)) {
                     Toast.makeText(this, "用户名或密码不能为空", Toast.LENGTH_SHORT).show();
                     return;
@@ -96,8 +104,7 @@ public class AdminLoginActivity extends AppCompatActivity implements View.OnClic
                 if (cursor.getCount() < 1) {
                     Toast.makeText(AdminLoginActivity.this, "该账号未注册", Toast.LENGTH_SHORT).show();
                     return;
-                }
-                else {
+                } else {
                     //创建密码的查询语句
                     String pass_sql = "select * from " + sqlData.ADMIN_TABLE + " where _id = '" + login + "' and password = '" + pass + "'";
                     //执行查询语句，返回一个游标
@@ -106,7 +113,7 @@ public class AdminLoginActivity extends AppCompatActivity implements View.OnClic
                     if (cursors.moveToNext()) {
 
                         Intent AdministratorsActivity = new Intent(AdminLoginActivity.this, AdministratorsActivity.class);
-                        AdministratorsActivity.putExtra("id",login);
+                        AdministratorsActivity.putExtra("id", login);
                         startActivity(AdministratorsActivity);
                         cursor.getCount();
 
@@ -115,7 +122,7 @@ public class AdminLoginActivity extends AppCompatActivity implements View.OnClic
                             SharedPreferences.Editor edit = sp.edit();
                             //填写账号密码
                             edit.putString("key_admin_user", et_login.getText().toString());
-                            edit.putString("key_admin_pwd", et_psaa.getText().toString());
+                            edit.putString("key_admin_pwd", et_pwd.getText().toString());
                             edit.putBoolean("admin", true);//是否勾选
                             //提交事务
                             edit.commit();
@@ -130,8 +137,7 @@ public class AdminLoginActivity extends AppCompatActivity implements View.OnClic
                             //题交事务
                             edit.commit();
                         }
-                    }
-                    else{
+                    } else {
                         Toast.makeText(AdminLoginActivity.this, "密码错误", Toast.LENGTH_SHORT).show();
                         return;
                     }
@@ -141,7 +147,20 @@ public class AdminLoginActivity extends AppCompatActivity implements View.OnClic
                 break;
             case R.id.tv_register:
                 startActivity(new Intent(AdminLoginActivity.this, AdminRegisterActivity.class));
-
+                break;
+            case R.id.ib_S_password:
+                if (v_flag == true) {
+                    //设置文字可见状态
+                    et_pwd.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    //设置visible图片
+                    ib_S_password.setBackgroundResource(R.mipmap.icon_invisible);
+                    //设置v_flag状态
+                    v_flag = false;
+                } else {
+                    et_pwd.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    ib_S_password.setBackgroundResource(R.mipmap.icon_visible);
+                    v_flag = true;
+                }
                 break;
         }
     }

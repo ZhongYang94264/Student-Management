@@ -51,7 +51,6 @@ public class InformationActivity extends Activity {
         tv_profession = findViewById(R.id.tv_profession);
         tv_stuGenre = findViewById(R.id.tv_stuGenre);
         tv_stuSex = findViewById(R.id.tv_stuSex);
-
     }
 
     public void setData() {
