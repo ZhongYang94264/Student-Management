@@ -41,25 +41,13 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 "teacher_id ) ";
 
         db.execSQL(CREATE_STUDENT);
-
-        String INSERT_STUDENT = " insert into " + sqlData.STUDENT + "(_id,name,password,sex,school,department,proClass,genre) values " +
-                "('2018000227','罗海艳','227000','女','重庆科创职业学院','人工智能学院','软件技术Zk1801','在校生')," +
-                "('2018000649','谢丽','649000','女','重庆科创职业学院','人工智能学院','软件技术ZK1801','在校生') ";
-
-        db.execSQL(INSERT_STUDENT);
     }
 
     //学生课程表 + 成绩
     private void scoreTable(SQLiteDatabase db) {
-        String CREATE_STUDENT_COU = "create table " + sqlData.STUDENT_COU + "(_id VARCHAR ,lesName VARCHAR,stuScore int(3),teacherName varcher) ";
+        String CREATE_STUDENT_COU = "create table " + sqlData.STUDENT_COU + "(_id VARCHAR ," +
+                "lesName VARCHAR,stuScore integer,teacherName varchar,teacher_id varchar) ";
         db.execSQL(CREATE_STUDENT_COU);
-
-        String INSERT_STUDENT_COU = " insert into " + sqlData.STUDENT_COU + " values " +
-                "('2018000649','java基础',70,'罗罗')," +
-                "('2018000649','安卓实训',75,'肖肖')," +
-                "('2018000227','java基础',73,'罗罗')," +
-                "('2018000227','大学英语',74,'李倩') ";
-        db.execSQL(INSERT_STUDENT_COU);
     }
 
     //总分表
@@ -77,10 +65,14 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     //作业表
     private void wordTable(SQLiteDatabase db) {
         //作业表
-        String CREATE_WORD = "create table " + sqlData.WORD + "(_id VARCHAR ,name VARCHAR,lesName VARCHAR ,time DATETIME ,teacherId VARCHAR ) ";
+        String CREATE_WORD = "create table " + sqlData.WORK + "(_id VARCHAR ," +
+                "name VARCHAR," +
+                "lesName VARCHAR ," +
+                "time DATETIME ," +
+                "teacherId VARCHAR ) ";
         db.execSQL(CREATE_WORD);
 
-        String INSERT_WORD = " insert into " + sqlData.WORD + " values " +
+        String INSERT_WORD = " insert into " + sqlData.WORK + " values " +
                 "('2018000649','Android课后练习','安卓实训','2020-07-03 15:21:26','5411002')," +
                 "('2018000649','冒泡排序','java基础','2020-07-03 15:21:26','541101')," +
                 "('2018000227','java课后练习','java基础','2020-07-03 15:21:26','5411001') ";

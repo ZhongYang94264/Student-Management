@@ -39,8 +39,6 @@ public class StudentLoginActivity extends AppCompatActivity implements View.OnCl
     private EditText et_student, et_password;
     private TextView tv_F_password;
 
-    public static String stuId = "2018000649"; //学生id值
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +52,6 @@ public class StudentLoginActivity extends AppCompatActivity implements View.OnCl
         this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorStudentTitle));
         //初始化
         initVIew();
-
-        Log.d(TAG, "显示：" + stuId);
 
     }
 
@@ -106,7 +102,9 @@ public class StudentLoginActivity extends AppCompatActivity implements View.OnCl
                     Cursor cursors = dbOperate.selectDB(pass_sql);
                     //判断游标数量
                     if (cursors.moveToNext()) {
-                        startActivity(new Intent(StudentLoginActivity.this, StudentActivity.class));
+                        Intent s_intent = new Intent(StudentLoginActivity.this, StudentActivity.class);
+                        s_intent.putExtra("student_id", student);
+                        startActivity(s_intent);
                     } else {
                         Toast.makeText(StudentLoginActivity.this, "密码错误", Toast.LENGTH_SHORT).show();
                         return;
@@ -126,10 +124,10 @@ public class StudentLoginActivity extends AppCompatActivity implements View.OnCl
                         .show();
                 break;
             case R.id.tv_F_password:
-                getDialog("错误","请找管理员重置密码");
-               break;
-            }
+                getDialog("错误", "请找管理员重置密码");
+                break;
         }
+    }
 
     public void getDialog(final String title, String str) {
         new AlertDialog.Builder(StudentLoginActivity.this).setTitle(title)

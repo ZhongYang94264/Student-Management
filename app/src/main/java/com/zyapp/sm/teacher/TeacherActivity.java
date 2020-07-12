@@ -49,6 +49,7 @@ public class TeacherActivity extends AppCompatActivity {
         bundle.putString("work_num", work_num);
         mMyFragment.setArguments(bundle);
         mStudentFragment.setArguments(bundle);
+        mWorkFragment.setArguments(bundle);
     }
 
     private void initBottomListener() {

@@ -5,10 +5,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import com.zyapp.sm.R;
 import com.zyapp.sm.activity.StudentLoginActivity;
@@ -17,12 +15,13 @@ import com.zyapp.sm.sql.sqlData;
 
 
 /**
- *  我的作业
+ * 我的作业
  */
 public class WorkActivity extends AppCompatActivity {
 
     private static final String TAG = "WorkActivity";
     ListView lv_stuWork;
+    private String mStudent_id;
 
 
     @Override
@@ -34,12 +33,15 @@ public class WorkActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
+        //接收学号
+        mStudent_id = getIntent().getStringExtra("student_id");
+        Log.d(TAG, "接收到学号 ==> " + mStudent_id);
         AddDate();
     }
 
 
     //添加数据，适配器
-    public void AddDate(){
+    public void AddDate() {
 
         // 1. 初始化lIstView控件
         lv_stuWork = findViewById(R.id.lv_stuWork);
@@ -51,11 +53,11 @@ public class WorkActivity extends AppCompatActivity {
 
 
         // 创建查询语句
-        String sql = "select * from " + sqlData.WORD + " where _id = '" + StudentLoginActivity.stuId + "' ";
+        String sql = "select * from " + sqlData.WORK + " where _id = '" + mStudent_id + "' ";
         Cursor cursor = dbOperate.selectDB(sql);
         Log.d(TAG, "作业==>11 " + cursor);
 
-        while (cursor.moveToNext()){
+        while (cursor.moveToNext()) {
             String name = cursor.getString(0);
             String lesName = cursor.getString(2);
             String time = cursor.getString(3);
@@ -64,13 +66,13 @@ public class WorkActivity extends AppCompatActivity {
 
 
         // 3. 实例化适配器
-       // SimpleCursorAdapter 参数1：上下文 子条目布局文件 查询数据库的游标对象(null) 控件对应的数据表中的字段名 控件id
+        // SimpleCursorAdapter 参数1：上下文 子条目布局文件 查询数据库的游标对象(null) 控件对应的数据表中的字段名 控件id
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(
                 WorkActivity.this,
                 R.layout.stu_word_lv,
                 cursor,
-                new String[] { "name", "lesName","time"},
-                new int[]{R.id.tv_stuWordName, R.id.tv_stuCourse,R.id.tv_stuWordTime},
+                new String[]{"name", "lesName", "time"},
+                new int[]{R.id.tv_stuWordName, R.id.tv_stuCourse, R.id.tv_stuWordTime},
                 0);
 
         // 4. 设置适配器

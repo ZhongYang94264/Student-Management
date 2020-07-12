@@ -2,6 +2,8 @@ package com.zyapp.sm.teacher.fragment;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -27,9 +29,11 @@ import java.util.List;
  */
 public class AchievementFragment extends BaseFragment {
 
+    private static final String TAG = "AchievementFragment";
     private ImageView iv_add_achievement;
     private ListView li_achievement;
     private List<totalBean> mStudentData;
+    private String mWork_num;
 
     @Override
     protected int getRootViewResId() {

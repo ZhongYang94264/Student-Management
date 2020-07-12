@@ -17,21 +17,26 @@ import com.zyapp.sm.sql.sqlData;
 
 
 /**
- *  学生界面
+ * 学生界面
  */
 public class StudentActivity extends Activity implements View.OnClickListener {
 
     private static final String TAG = "StudentActivity";
-    Button btn_course,btn_word,btn_information,btn_modification,btn_out;
+    Button btn_course, btn_word, btn_information, btn_modification, btn_out;
+    private String mStudent_id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student);
         //初始化
         initStudent();
+        //接收学号
+        mStudent_id = getIntent().getStringExtra("student_id");
+        Log.d(TAG, "接收到学号 ==> " + mStudent_id);
     }
 
-    public void initStudent(){
+    public void initStudent() {
         btn_course = findViewById(R.id.btn_course);
         btn_word = findViewById(R.id.btn_word);
         btn_information = findViewById(R.id.btn_information);
@@ -49,21 +54,25 @@ public class StudentActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.btn_course:
-                Intent intent1 = new Intent(StudentActivity.this,CourseActivity.class);
+                Intent intent1 = new Intent(StudentActivity.this, CourseActivity.class);
+                intent1.putExtra("student_id", mStudent_id);
                 startActivity(intent1);
                 break;
             case R.id.btn_word:
-                Intent intent2 = new Intent(StudentActivity.this,WorkActivity.class);
+                Intent intent2 = new Intent(StudentActivity.this, WorkActivity.class);
+                intent2.putExtra("student_id", mStudent_id);
                 startActivity(intent2);
                 break;
             case R.id.btn_information:
-                Intent intent3 = new Intent(StudentActivity.this,InformationActivity.class);
+                Intent intent3 = new Intent(StudentActivity.this, InformationActivity.class);
+                intent3.putExtra("student_id", mStudent_id);
                 startActivity(intent3);
                 break;
             case R.id.btn_modification:
-                Intent intent4 = new Intent(StudentActivity.this,ModificationActivity.class);
+                Intent intent4 = new Intent(StudentActivity.this, ModificationActivity.class);
+                intent4.putExtra("student_id", mStudent_id);
                 startActivity(intent4);
                 break;
             case R.id.btn_out:

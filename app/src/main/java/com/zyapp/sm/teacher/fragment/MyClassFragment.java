@@ -13,6 +13,7 @@ import com.zyapp.sm.teacher.base.BaseFragment;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @项目名称 Student-Management
@@ -31,7 +32,7 @@ public class MyClassFragment extends BaseFragment {
 
     @Override
     protected int getRootViewResId() {
-        return R.layout.fragment_work;
+        return R.layout.fragment_class;
     }
 
     @Override
@@ -42,7 +43,8 @@ public class MyClassFragment extends BaseFragment {
             mWork_num = getArguments().getString("work_num");
         }
         Log.d(TAG, "接收到教师工号==> " + mWork_num);
-        li_my_class = getActivity().findViewById(R.id.li_my_class);
+        //初始化控件
+        li_my_class = Objects.requireNonNull(getActivity()).findViewById(R.id.li_my_class);
         //添加数据
         mClassData = new ArrayList<classBean>();
         initClass();

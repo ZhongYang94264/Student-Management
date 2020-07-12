@@ -1,10 +1,8 @@
 package com.zyapp.sm.student;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -13,16 +11,13 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
-import androidx.core.content.ContextCompat;
-
 import com.zyapp.sm.R;
-import com.zyapp.sm.activity.StudentLoginActivity;
 import com.zyapp.sm.sql.DBOperate;
 import com.zyapp.sm.sql.sqlData;
 
 
 /**
- *  我的课程
+ * 我的课程
  */
 public class CourseActivity extends Activity {
 
@@ -34,24 +29,25 @@ public class CourseActivity extends Activity {
     String cGrade;//班级
     String score;//分数
     String lesName; //课程名
-    String teacherName,teacherId;
+    String teacherName, teacherId;
+    private String mStudent_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course);
-
+        //接收学号
+        mStudent_id = getIntent().getStringExtra("student_id");
+        Log.d(TAG, "接收到学号 ==> " + mStudent_id);
         AddDate();
 
     }
 
 
-
-
     /*
         添加数据，适配器
      */
-    public void AddDate(){
+    public void AddDate() {
 
         // 1. 初始化lIstView控件
         lv_course = findViewById(R.id.lv_course);
@@ -59,25 +55,25 @@ public class CourseActivity extends Activity {
 
         // 2. 从数据库中获得数据
         // 打开数据库
-        DBOperate dbOperate  = new DBOperate();
+        DBOperate dbOperate = new DBOperate();
         dbOperate.OpenDB(CourseActivity.this);
         // 创建查询语句
 
         //班级
-        String sql1 = "select * from " + sqlData.STUDENT + " where _id = '" + StudentLoginActivity.stuId + "' " ;
+        String sql1 = "select * from " + sqlData.STUDENT + " where _id = '" + mStudent_id + "' ";
         Cursor cursor1 = dbOperate.selectDB(sql1);
-        while (cursor1.moveToNext()){
+        while (cursor1.moveToNext()) {
             cGrade = cursor1.getString(6);
             Log.d(TAG, "班级==> " + cGrade);
         }
 
         //课程 + 分数 + 老师
-        String sql = "select * from " + sqlData.STUDENT_COU + " where _id = '" + StudentLoginActivity.stuId + "' " ;
+        String sql = "select * from " + sqlData.STUDENT_COU + " where _id = '" + mStudent_id + "' ";
 
         Cursor cursor = dbOperate.selectDB(sql);
 
         Log.d(TAG, "班级==>11 " + cursor);
-        while (cursor.moveToNext()){
+        while (cursor.moveToNext()) {
             score = cursor.getString(2);
             lesName = cursor.getString(1);
             teacherName = cursor.getString(3);
@@ -91,8 +87,8 @@ public class CourseActivity extends Activity {
                 CourseActivity.this,
                 R.layout.stu_course_lv,
                 cursor,
-                new String[] { "stuScore", "lesName","teacherName" },
-                new int[]{R.id.tv_score,R.id.tv_courseName,R.id.tv_teacherName },
+                new String[]{"stuScore", "lesName", "teacherName"},
+                new int[]{R.id.tv_score, R.id.tv_curriculumName, R.id.tv_teacherName},
                 0);
         Log.d(TAG, "班级==>12 " + cursor);
 

@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="20dp">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_student_work_item"
+        android:layout_margin="20dp"
+        android:background="@drawable/bg_work_item"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="10dp">
 
         <TextView
-            android:id="@+id/tv_stuWordName"
+            android:id="@+id/tv_work_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="作业名称"
-            android:textColor="#000"
+            android:text="安卓登录界面功能实现"
+            android:textColor="@color/colorBlack"
             android:textSize="25sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="20dp">
 
             <TextView
-                android:id="@+id/tv_stuWordTime"
+                android:id="@+id/tv_publish_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="发布时间" />
+                android:layout_weight="1"
+                android:text="2020-07-12/11:10:00" />
 
             <TextView
-                android:id="@+id/tv_stuCourse"
+                android:id="@+id/tv_les_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="140dp"
-                android:text="课程名称"/>
+                android:layout_weight="2"
+                android:text="Android开发基础" />
 
         </LinearLayout>
 
     </LinearLayout>
 
-
-</RelativeLayout>
+</LinearLayout>

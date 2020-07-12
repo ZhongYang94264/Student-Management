@@ -3,12 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
+    android:background="#C8EFD4"
     android:orientation="vertical">
 
     <ListView
-        android:id="@+id/li_my_class"
+        android:id="@+id/li_to_be_corrected"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#D3D5F5" />
+        android:divider="#C8EFD4"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

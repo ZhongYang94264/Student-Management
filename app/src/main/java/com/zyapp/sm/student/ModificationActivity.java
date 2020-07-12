@@ -24,7 +24,7 @@ import com.zyapp.sm.sql.sqlData;
 
 
 /**
- *  修改密码
+ * 修改密码
  */
 public class ModificationActivity extends Activity {
     private static final String TAG = "ModificationActivity";
@@ -39,18 +39,22 @@ public class ModificationActivity extends Activity {
     private String mStr_stuNewpassword;
     private String mStr_stuYespassword;
     String pass;
+    private String mStudent_id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modification);
-
+        //接收学号
+        mStudent_id = getIntent().getStringExtra("student_id");
+        Log.d(TAG, "接收到学号 ==> " + mStudent_id);
         //调用方法
-        initModification(  );
-        setBtn(  );
+        initModification();
+        setBtn();
     }
 
     //初始化
-    public void initModification(){
+    public void initModification() {
         et_stuNewpassword = findViewById(R.id.et_stuNewpassword);
         et_stuPassword = findViewById(R.id.et_stuPassword);
         et_stuYespassword = findViewById(R.id.et_stuYespassword);
@@ -59,17 +63,17 @@ public class ModificationActivity extends Activity {
     }
 
     //监听事件
-    public void setBtn(  ){
+    public void setBtn() {
         btn_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //获取输入文本
-                mStr_stuPassword=  et_stuPassword.getText().toString();
+                mStr_stuPassword = et_stuPassword.getText().toString();
                 mStr_stuNewpassword = et_stuNewpassword.getText().toString();
-                mStr_stuYespassword=et_stuYespassword.getText().toString();
+                mStr_stuYespassword = et_stuYespassword.getText().toString();
 
                 // 是否为空(判断处理信息)
-                if ( mStr_stuPassword.equals("") || mStr_stuNewpassword.equals("")||   mStr_stuYespassword.equals("")) {
+                if (mStr_stuPassword.equals("") || mStr_stuNewpassword.equals("") || mStr_stuYespassword.equals("")) {
                     getDialog("错误", "相关数据不能为空");
                     return;
                 }
@@ -78,7 +82,7 @@ public class ModificationActivity extends Activity {
                 DBOperate dbOperate = new DBOperate();
                 dbOperate.OpenDB(ModificationActivity.this);
 
-                String sql = "select * from " + sqlData.STUDENT  + " where _id = '" + StudentLoginActivity.stuId + "' ";
+                String sql = "select * from " + sqlData.STUDENT + " where _id = '" + mStudent_id + "' ";
                 Cursor cursor = dbOperate.selectDB(sql);
                 Log.d(TAG, "数据==> " + cursor);
 
@@ -87,46 +91,47 @@ public class ModificationActivity extends Activity {
                     pass = cursor.getString(2);
                     Log.d(TAG, "得到密碼==> " + pass);
                 }
-                if ( mStr_stuPassword.equals(pass)) {
-                    if(mStr_stuNewpassword.equals(pass)){
-                        getDialog("提示","新密码与旧密码不能相同");
-                    }else{
-                        if(mStr_stuYespassword.equals(mStr_stuNewpassword)){
+                if (mStr_stuPassword.equals(pass)) {
+                    if (mStr_stuNewpassword.equals(pass)) {
+                        getDialog("提示", "新密码与旧密码不能相同");
+                    } else {
+                        if (mStr_stuYespassword.equals(mStr_stuNewpassword)) {
 
-                            String sql2 = "update " + sqlData.STUDENT + " set password = '" + mStr_stuYespassword + "' where _id = '" + StudentLoginActivity.stuId + "' ";
+                            String sql2 = "update " + sqlData.STUDENT + " set password = '" + mStr_stuYespassword + "'" +
+                                    " where _id = '" + mStudent_id + "' ";
                             dbOperate.operationDB(sql2);
 
                             getDialog("完成", "修改成功");
 
-                        }else {
-                            getDialog("提示","修改密码不一致");
+                        } else {
+                            getDialog("提示", "修改密码不一致");
                         }
                     }
-                }else{
-                    getDialog("提示","旧密码输入错误");
+                } else {
+                    getDialog("提示", "旧密码输入错误");
                 }
 
 
                 //关闭数据库
-                dbOperate.CloseDB( );
+                dbOperate.CloseDB();
             }
         });
     }
 
-   // 弹出窗口
+    // 弹出窗口
     public void getDialog(final String title, String str) {
         new AlertDialog.Builder(ModificationActivity.this).setTitle(title)
                 .setMessage(str)
                 .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        if(title.equals("完成")){
-                            Intent intent = new Intent(ModificationActivity.this,StudentActivity.class);
+                        if (title.equals("完成")) {
+                            Intent intent = new Intent(ModificationActivity.this, StudentActivity.class);
                             startActivity(intent);
                         }
 
                     }
-                }).show( );
+                }).show();
     }
 
 }
