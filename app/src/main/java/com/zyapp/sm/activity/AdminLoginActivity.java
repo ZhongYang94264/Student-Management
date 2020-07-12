@@ -88,7 +88,9 @@ public class AdminLoginActivity extends AppCompatActivity implements View.OnClic
                     Cursor cursors = dbOperate.selectDB(pass_sql);
                     //判断游标数量
                     if (cursors.moveToNext()) {
-                        startActivity(new Intent(AdminLoginActivity.this, AdministratorsActivity.class));
+                        Intent AdministratorsActivity = new Intent(AdminLoginActivity.this, AdministratorsActivity.class);
+                        AdministratorsActivity.putExtra("id",login);
+                        startActivity(AdministratorsActivity);
                     }
                     else{
                         Toast.makeText(AdminLoginActivity.this, "密码错误", Toast.LENGTH_SHORT).show();

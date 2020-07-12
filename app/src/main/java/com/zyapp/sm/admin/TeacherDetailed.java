@@ -36,7 +36,7 @@ public class TeacherDetailed extends Activity {
         tv_td_email = findViewById(R.id.tv_td_email);
         ID = getIntent().getStringExtra("id");
     }
-
+//显示信息
     private void display() {
         DBOperate DBO = new DBOperate();
         DBO.OpenDB(this);

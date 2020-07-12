@@ -50,15 +50,22 @@ public class StudentInformation extends Activity {
         //添加文本更改侦听器                文本观察程序
         ed_student_name.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            }
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            }
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
             @Override
             public void afterTextChanged(Editable editable) {
                 if(!ed_student_name.getText().toString().equals("")){
-                    display(" where name like  " + "'%" + ed_student_name.getText().toString() + "%'" );
+                    String sql=ed_student_name.getText().toString();
+                    String[] sqls=sql.split("'");
+                    sql=null;
+                    for (int i=0;i<sqls.length;i++){
+                        sql +=sqls[i];
+                    }
+                    display(" where name like  " + "'%" + sql + "%'" );
+                }
+                else {
+                    display("");
                 }
             }
         });
