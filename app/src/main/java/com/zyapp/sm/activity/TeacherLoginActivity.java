@@ -4,12 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +29,8 @@ public class TeacherLoginActivity extends AppCompatActivity implements View.OnCl
     private Button btn_teacher_login;
     private EditText et_account, et_pwd;
     private String mStr_work_num;
+    private SharedPreferences sp;
+    CheckBox cb_T_password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,7 @@ public class TeacherLoginActivity extends AppCompatActivity implements View.OnCl
         this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorTeacherTitle));
         //初始化
         initView();
+        Remember ();
     }
 
     /**
@@ -50,6 +56,8 @@ public class TeacherLoginActivity extends AppCompatActivity implements View.OnCl
         et_account = findViewById(R.id.et_admin_account_num);
         et_pwd = findViewById(R.id.et_teacher_password);
         tv_F_password = findViewById(R.id.tv_F_password);
+        cb_T_password=findViewById(R.id.cb_T_password);
+        sp= this.getSharedPreferences("user", Context.MODE_PRIVATE);
         //注册监听
         tv_register.setOnClickListener(this);
         btn_teacher_login.setOnClickListener(this);
@@ -58,6 +66,14 @@ public class TeacherLoginActivity extends AppCompatActivity implements View.OnCl
         tv_F_password.setOnClickListener(this);
     }
 
+    private void Remember () {//记住密码
+        if (sp.getBoolean("teacher", false)) {
+            et_account.setText(sp.getString("key_teacher_user", null));
+            et_pwd.setText(sp.getString("key_teacher_pwd", null));
+            //默认勾选
+            cb_T_password.setChecked(true);
+        }
+    }
     /**
      * @param v
      */
@@ -96,6 +112,27 @@ public class TeacherLoginActivity extends AppCompatActivity implements View.OnCl
                         Intent t_a_intent = new Intent(TeacherLoginActivity.this, TeacherActivity.class);
                         t_a_intent.putExtra("work_num", mStr_work_num);
                         startActivity(t_a_intent);
+                        cursors.close();
+                        //勾选记住密码
+                        if (cb_T_password.isChecked()) {
+                            SharedPreferences.Editor edit = sp.edit();
+                            //填写账号密码
+                            edit.putString("key_teacher_user", et_account.getText().toString());
+                            edit.putString("key_teacher_pwd", et_pwd.getText().toString());
+                            edit.putBoolean("teacher", true);//是否勾选
+                            //提交事务
+                            edit.commit();
+                        }
+                        //取消勾选
+                        else {
+                            SharedPreferences.Editor edit = sp.edit();
+                            //填写空数据
+                            edit.putString("key_teacher_user", "");
+                            edit.putString("key_teacher_pwd", "");
+                            edit.putBoolean("teacher", false);
+                            //题交事务
+                            edit.commit();
+                        }
                     } else {
                         Toast.makeText(TeacherLoginActivity.this, "密码错误", Toast.LENGTH_SHORT).show();
                         return;

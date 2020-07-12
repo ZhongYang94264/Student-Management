@@ -7,7 +7,8 @@ import android.widget.Button;
 import com.zyapp.sm.R;
 
 public class AdministratorsActivity extends Activity implements View.OnClickListener{
-Button btn_teacher,btn_student,btn_information;
+    String ID;
+    Button btn_teacher,btn_student,btn_information;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +23,8 @@ Button btn_teacher,btn_student,btn_information;
         btn_teacher.setOnClickListener(this);
         btn_student.setOnClickListener(this);
         btn_information.setOnClickListener(this);
+
+        ID=getIntent().getStringExtra("id");
     }
     public void onClick(View v) {
         switch (v.getId()){
@@ -35,6 +38,7 @@ Button btn_teacher,btn_student,btn_information;
                 break;
             case R.id.btn_information:
                 Intent Information=new Intent(this, Information.class);
+                Information.putExtra("id",ID);
                 startActivity(Information);
                 break;
         }

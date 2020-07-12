@@ -113,14 +113,21 @@
             android:textSize="30dp"
             android:layout_gravity="center_vertical"
             android:text="在校状态："/>
+        <TextView
+            android:id="@+id/tv_sd_genre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:layout_gravity="center_vertical" />
 
-        <ToggleButton
-            android:id="@+id/tb_sd_genre"
+        <Button
+            android:id="@+id/btn_sd_genre"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_gravity="center_vertical"
-            android:textOff="在校"
-            android:textOn="离校"/>
+            android:text="修  改"
+            android:onClick="modify"
+            />
     </LinearLayout>
     <Button
         android:layout_marginTop="20dp"

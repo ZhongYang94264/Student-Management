@@ -64,7 +64,16 @@ public class TeacherInformation extends Activity {
             @Override
             public void afterTextChanged(Editable editable) {
                 if(!ed_teacher_name.getText().toString().equals("")){
-                    display(" where name like  " + "'%" + ed_teacher_name.getText().toString() + "%'" );
+                    String sql=ed_teacher_name.getText().toString();
+                    String[] sqls=sql.split("'");
+                    sql=null;
+                    for (int i=0;i<sqls.length;i++){
+                        sql +=sqls[i];
+                    }
+                    display(" where name like  " + "'%" + sql + "%'" );
+                }
+                else {
+                    display("");
                 }
             }
         });

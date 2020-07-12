@@ -6,13 +6,16 @@ import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 
 import android.widget.ImageButton;
@@ -38,7 +41,9 @@ public class StudentLoginActivity extends AppCompatActivity implements View.OnCl
 
     private EditText et_student, et_password;
     private TextView tv_F_password;
+    private CheckBox cb_R_password;
 
+    private SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +57,8 @@ public class StudentLoginActivity extends AppCompatActivity implements View.OnCl
         this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorStudentTitle));
         //初始化
         initVIew();
+        Remember ();
+
 
     }
 
@@ -65,11 +72,23 @@ public class StudentLoginActivity extends AppCompatActivity implements View.OnCl
         et_student = findViewById(R.id.et_student_id);
         et_password = findViewById(R.id.et_student_password);
         tv_F_password = findViewById(R.id.tv_F_password);
+        cb_R_password=findViewById(R.id.cb_R_password);
+        sp = this.getSharedPreferences("user", Context.MODE_PRIVATE);
 
         //注册监听
         btn_login.setOnClickListener(this);
         tv_help.setOnClickListener(this);
         tv_F_password.setOnClickListener(this);
+
+    }
+
+    private void Remember () {//记住密码
+        if (sp.getBoolean("student", false)) {
+            et_student.setText(sp.getString("key_student_user", null));
+            et_password.setText(sp.getString("key_student_pwd", null));
+            //默认勾选
+            cb_R_password.setChecked(true);
+        }
     }
 
     @Override
@@ -105,6 +124,27 @@ public class StudentLoginActivity extends AppCompatActivity implements View.OnCl
                         Intent s_intent = new Intent(StudentLoginActivity.this, StudentActivity.class);
                         s_intent.putExtra("student_id", student);
                         startActivity(s_intent);
+                        //勾选记住密码
+                        if (cb_R_password.isChecked()) {
+                            SharedPreferences.Editor edit = sp.edit();
+                            //填写账号密码
+                            edit.putString("key_student_user", et_student.getText().toString());
+                            edit.putString("key_student_pwd", et_password.getText().toString());
+                            edit.putBoolean("student", true);//是否勾选
+                            //提交事务
+                            edit.commit();
+                        }
+                        //取消勾选
+                        else {
+                            SharedPreferences.Editor edit = sp.edit();
+                            //填写空数据
+                            edit.putString("key_student_user", "");
+                            edit.putString("key_student_pwd", "");
+                            edit.putBoolean("student", false);
+                            //题交事务
+                            edit.commit();
+                        }
+                        startActivity(new Intent(StudentLoginActivity.this, StudentActivity.class));
                     } else {
                         Toast.makeText(StudentLoginActivity.this, "密码错误", Toast.LENGTH_SHORT).show();
                         return;
