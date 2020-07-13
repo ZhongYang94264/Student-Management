@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
@@ -30,6 +31,7 @@ public class CourseActivity extends Activity {
     String score;//分数
     String lesName; //课程名
     String teacherName, teacherId;
+    LinearLayout layout_student_empty;
     private String mStudent_id;
 
     @Override
@@ -52,6 +54,7 @@ public class CourseActivity extends Activity {
         // 1. 初始化lIstView控件
         lv_course = findViewById(R.id.lv_course);
         tvclass = findViewById(R.id.tv_class);
+        layout_student_empty = findViewById(R.id.layout_student_empty);
 
         // 2. 从数据库中获得数据
         // 打开数据库
@@ -94,7 +97,7 @@ public class CourseActivity extends Activity {
 
         // 4. 设置适配器
         lv_course.setAdapter(adapter);
-//        tvclass.setText(cGrade);
+        lv_course.setEmptyView(layout_student_empty);
         // 5. 关闭数据库
         dbOperate.CloseDB();
 

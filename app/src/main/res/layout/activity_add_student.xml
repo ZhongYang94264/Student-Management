@@ -72,6 +72,9 @@
             android:id="@+id/et_student_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="格式：2020000001"
+            android:maxLines="1"
             android:textColor="@color/colorBlack"
             android:textSize="18sp" />
 
@@ -95,6 +98,8 @@
             android:id="@+id/et_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1"
             android:textColor="@color/colorBlack"
             android:textSize="18sp" />
 
@@ -158,6 +163,8 @@
             android:id="@+id/et_school"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1"
             android:textColor="@color/colorBlack"
             android:textSize="18sp" />
 
@@ -181,6 +188,8 @@
             android:id="@+id/et_department"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1"
             android:textColor="@color/colorBlack"
             android:textSize="18sp" />
 
@@ -204,6 +213,8 @@
             android:id="@+id/et_class_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1"
             android:textColor="@color/colorBlack"
             android:textSize="18sp" />
 

@@ -3,6 +3,7 @@ package com.zyapp.sm.student;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
@@ -22,6 +23,7 @@ public class WorkActivity extends AppCompatActivity {
     private static final String TAG = "WorkActivity";
     ListView lv_stuWork;
     private String mStudent_id;
+    private LinearLayout layout_student_work_empty;
 
 
     @Override
@@ -45,6 +47,7 @@ public class WorkActivity extends AppCompatActivity {
 
         // 1. 初始化lIstView控件
         lv_stuWork = findViewById(R.id.lv_stuWork);
+        layout_student_work_empty = findViewById(R.id.layout_student_work_empty);
 
         // 2. 从数据库中获得数据
         // 打开数据库
@@ -79,6 +82,7 @@ public class WorkActivity extends AppCompatActivity {
         Log.d(TAG, "作业==>12 " + cursor);
 
         lv_stuWork.setAdapter(adapter);
+        lv_stuWork.setEmptyView(layout_student_work_empty);
 
         // 5. 关闭数据库
         dbOperate.CloseDB();

@@ -15,7 +15,7 @@ import com.zyapp.sm.sql.sqlData;
 
 public class EstablishCurriculumActivity extends AppCompatActivity {
 
-    private EditText et_student_id, et_les_name, et_stuScore, et_teacher_nmae;
+    private EditText et_student_id, et_les_name, et_stuScore, et_teacher_name;
     private String mWork_num;
 
     @Override
@@ -38,7 +38,7 @@ public class EstablishCurriculumActivity extends AppCompatActivity {
         et_student_id = findViewById(R.id.et_curriculum_student_id);
         et_les_name = findViewById(R.id.et_les_name);
         et_stuScore = findViewById(R.id.et_stu_score);
-        et_teacher_nmae = findViewById(R.id.et_curriculum_teacher_name);
+        et_teacher_name = findViewById(R.id.et_curriculum_teacher_name);
     }
 
     /**
@@ -60,7 +60,7 @@ public class EstablishCurriculumActivity extends AppCompatActivity {
         String str_student_id = et_student_id.getText().toString().trim();
         String str_les_name = et_les_name.getText().toString().trim();
         String str_stuScore = et_stuScore.getText().toString().trim();
-        String str_teacher_name = et_teacher_nmae.getText().toString().trim();
+        String str_teacher_name = et_teacher_name.getText().toString().trim();
         //判空
         if (str_student_id.isEmpty()) {
             Toast.makeText(this, "学生学号不能为空", Toast.LENGTH_SHORT).show();

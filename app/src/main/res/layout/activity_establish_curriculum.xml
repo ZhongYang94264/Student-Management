@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:text="创建班级"
+            android:text="新建课程"
             android:textColor="@color/colorWhite"
             android:textSize="20sp" />
 
@@ -55,8 +55,10 @@
         android:padding="15dp">
 
         <ImageView
-            android:layout_width="200dp"
+            android:layout_width="210dp"
             android:layout_height="140dp"
+            android:padding="2dp"
+            android:background="@drawable/bg_image_stoke"
             android:src="@mipmap/icon_curriculum_01" />
 
     </LinearLayout>
@@ -79,6 +81,8 @@
             android:id="@+id/et_curriculum_student_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLines="1"
             android:textColor="@color/colorBlack"
             android:textSize="18sp" />
 
@@ -102,6 +106,8 @@
             android:id="@+id/et_les_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1"
             android:textColor="@color/colorBlack"
             android:textSize="18sp" />
 
@@ -125,6 +131,8 @@
             android:id="@+id/et_stu_score"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLines="1"
             android:textColor="@color/colorBlack"
             android:textSize="18sp" />
 
@@ -148,6 +156,8 @@
             android:id="@+id/et_curriculum_teacher_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1"
             android:textColor="@color/colorBlack"
             android:textSize="18sp" />
 

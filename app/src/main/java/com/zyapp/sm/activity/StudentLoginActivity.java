@@ -155,7 +155,6 @@ public class StudentLoginActivity extends AppCompatActivity implements View.OnCl
                         Toast.makeText(StudentLoginActivity.this, "密码错误", Toast.LENGTH_SHORT).show();
                         return;
                     }
-                    Toast.makeText(StudentLoginActivity.this, "正确", Toast.LENGTH_SHORT).show();
                     //关闭数据库
                     dbOperate.CloseDB();
                 }

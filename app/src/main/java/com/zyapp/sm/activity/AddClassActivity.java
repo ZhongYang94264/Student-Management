@@ -18,7 +18,7 @@ public class AddClassActivity extends AppCompatActivity {
 
     private static final String TAG = "AddClassActivity";
     private String mWork_num;
-    private EditText et_class_name, et_class_num, et_class_id;
+    private EditText et_class_name, et_class_id;
     private DBOperate mDbOperate;
 
     @Override
@@ -43,7 +43,6 @@ public class AddClassActivity extends AppCompatActivity {
     private void initView() {
         et_class_name = findViewById(R.id.et_class_name);
         et_class_id = findViewById(R.id.et_class_id);
-        et_class_num = findViewById(R.id.et_class_num);
     }
 
     /**
@@ -61,18 +60,13 @@ public class AddClassActivity extends AppCompatActivity {
      * @param view
      */
     public void confirmOnClick3(View view) {
-        Log.d(TAG,"点击了确定按钮");
+        Log.d(TAG, "点击了确定按钮");
         //获取数据
         String str_name = et_class_name.getText().toString().trim();
         String str_class_id = et_class_id.getText().toString().trim();
-        String str_num = et_class_num.getText().toString().trim();
         //判空
         if (str_name.isEmpty()) {
             Toast.makeText(this, "请输入班级名称", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (str_num.isEmpty()) {
-            Toast.makeText(this, "请输入班级人员总数", Toast.LENGTH_SHORT).show();
             return;
         }
         if (str_class_id.isEmpty()) {
@@ -86,13 +80,17 @@ public class AddClassActivity extends AppCompatActivity {
         //
         Cursor cursor = mDbOperate.selectDB("select * from " + sqlData.CLASS_TABLE + " where _id = '" +
                 str_class_id + "' ");
+        Cursor count_cursor = mDbOperate.selectDB("select * from " + sqlData.STUDENT + " " +
+                "where proClass = '" + str_name + "'");
+        int class_size = count_cursor.getCount();
+        Log.d(TAG, "班级总人数 ==> " + class_size);
         if (cursor.getCount() > 0) {
             cursor.close();
             Toast.makeText(this, "该班级已存在", Toast.LENGTH_SHORT).show();
             return;
         } else {
             mDbOperate.operationDB("insert into " + sqlData.CLASS_TABLE + " (_id,class_name,class_num,teacher_id) " +
-                    "values ('" + str_class_id + "','" + str_name + "','" + str_num + "','" + mWork_num + "')");
+                    "values ('" + str_class_id + "','" + str_name + "','" + class_size + "','" + mWork_num + "')");
             Toast.makeText(this, "添加成功", Toast.LENGTH_SHORT).show();
             this.finish();
         }

@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:gravity="center_vertical"
     android:padding="15dp">
 
     <TextView
@@ -9,8 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="__"
-        android:textSize="18sp"
-        android:textColor="@color/colorBlack" />
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/tv_search_publish_time"

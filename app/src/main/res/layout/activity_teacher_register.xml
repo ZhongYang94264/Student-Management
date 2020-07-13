@@ -67,7 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
-            android:hint="@string/text_teacher_work_num"
+            android:hint="格式：2020001"
             android:inputType="number"
             android:maxLines="1"
             android:paddingTop="15dp"

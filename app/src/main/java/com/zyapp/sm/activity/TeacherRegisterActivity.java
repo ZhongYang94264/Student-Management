@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,7 +19,11 @@ import com.zyapp.sm.sql.DBOperate;
 import com.zyapp.sm.sql.sqlData;
 import com.zyapp.sm.teacher.TeacherActivity;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class TeacherRegisterActivity extends AppCompatActivity {
+    private static final String TAG = "TeacherRegisterActivity";
     EditText et_teacher_name, et_teacher_work_num, et_password, et_teacher_confirm_pwd;//姓名  教师工号  密码  确认密码
     Button btn_teacher_register;//教师按钮
     private String mStr_teacher_name;
@@ -55,10 +60,9 @@ public class TeacherRegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // 获取文本
-
                 mStr_teacher_name = et_teacher_name.getText().toString();//教师姓名
                 mStr_teacher_work_num = et_teacher_work_num.getText().toString();//教师工号
-                mStr_password = et_password.getText().toString( );//密码
+                mStr_password = et_password.getText().toString();//密码
                 mStr_confirm_password = et_teacher_confirm_pwd.getText().toString();// 确认密码
                 // 是否为空(判断处理信息)
                 if (mStr_teacher_name.equals("") || mStr_teacher_work_num.equals("") || mStr_password.equals("")
@@ -72,6 +76,14 @@ public class TeacherRegisterActivity extends AppCompatActivity {
                     //清除密码
                     et_password.setText("");
                     et_teacher_confirm_pwd.setText("");
+                    return;
+                }
+                //正则表达式  /^2020(\d{3})+$/ 以2020 开头，后跟3个数字
+                String reg = "^2020(\\d{3})+$";
+                Pattern compile = Pattern.compile(reg);
+                Matcher matcher = compile.matcher(mStr_teacher_work_num);
+                if (!matcher.matches()) {
+                    Toast.makeText(TeacherRegisterActivity.this, "教师工号格式错误", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 //操作数据库

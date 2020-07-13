@@ -72,6 +72,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="请输入学生学号"
+                android:inputType="number"
+                android:maxLines="1"
                 android:textColor="@color/colorBlack"
                 android:textSize="18sp" />
 
@@ -94,6 +96,8 @@
                 android:id="@+id/et_publish_job_work_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"
                 android:textColor="@color/colorBlack"
                 android:textSize="18sp" />
 
@@ -116,6 +120,8 @@
                 android:id="@+id/et_publish_job_les_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"
                 android:textColor="@color/colorBlack"
                 android:textSize="18sp" />
 

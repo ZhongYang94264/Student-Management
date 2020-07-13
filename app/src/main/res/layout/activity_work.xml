@@ -13,14 +13,34 @@
         android:background="@mipmap/bg_text_title"
         android:gravity="center"
         android:text="我的作业"
-        android:textSize="25dp"
-        android:textColor="@color/colorStudent"/>
+        android:textColor="@color/colorStudent"
+        android:textSize="25dp" />
 
     <ListView
         android:id="@+id/lv_stuWork"
-        android:layout_margin="10dp"
-        android:divider="#F3F3F3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"
+        android:divider="#F3F3F3" />
+
+    <LinearLayout
+        android:id="@+id/layout_student_work_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:src="@mipmap/icon_student_work_empty" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="暂无数据"
+            android:textColor="@color/colorBlack" />
+
+    </LinearLayout>
 
 </LinearLayout>

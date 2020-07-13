@@ -144,7 +144,7 @@ public class StudentFragment extends BaseFragment implements View.OnClickListene
         mPopupWindow.setOutsideTouchable(true);
         mPopupWindow.setFocusable(true);
         //显示位置
-        mPopupWindow.showAsDropDown(iv_menu, 50, 0);
+        mPopupWindow.showAsDropDown(iv_menu,0,30);
         //初始化弹窗子条目的点击事件
         initListener();
     }

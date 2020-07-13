@@ -34,7 +34,7 @@ public class MyClassFragment extends BaseFragment {
 
     @Override
     protected int getRootViewResId() {
-        return R.layout.fragment_class;
+        return R.layout.fragment_my_class;
     }
 
     @Override

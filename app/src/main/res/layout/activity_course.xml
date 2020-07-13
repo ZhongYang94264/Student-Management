@@ -22,4 +22,18 @@
         android:layout_height="wrap_content"
         android:divider="@color/colorWhite" />
 
+    <LinearLayout
+        android:id="@+id/layout_student_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:src="@mipmap/icon_student_empty" />
+
+    </LinearLayout>
+
 </LinearLayout>

@@ -3,6 +3,8 @@ package com.zyapp.sm.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +17,8 @@ import com.zyapp.sm.R;
 import com.zyapp.sm.sql.DBOperate;
 import com.zyapp.sm.sql.sqlData;
 import com.zyapp.sm.teacher.UpdateInfoActivity;
+
+import java.util.regex.Pattern;
 
 public class AddStudentActivity extends AppCompatActivity {
 
@@ -93,6 +97,11 @@ public class AddStudentActivity extends AppCompatActivity {
             Toast.makeText(this, "请输入班级", Toast.LENGTH_SHORT).show();
             return;
         }
+        //正则表达式
+        if (!Pattern.compile("^2020000(\\d{3})+$").matcher(str_student_id).matches()) {
+            Toast.makeText(this, "学号格式错误", Toast.LENGTH_SHORT).show();
+            return;
+        }
         //操作数据库
         mDbOperate = new DBOperate();
         mDbOperate.OpenDB(this);
@@ -109,8 +118,17 @@ public class AddStudentActivity extends AppCompatActivity {
                     "department,proClass,genre,teacher_id) values ('" + str_student_id + "','" + str_name + "','" + str_student_id + "'," +
                     "'" + str_gender + "','" + str_school + "','" + str_department + "','" + str_class + "'," +
                     "'" + tb_type.getText().toString() + "','" + mWork_num + "')");
-            Toast.makeText(this, "添加成功", Toast.LENGTH_SHORT).show();
-            this.finish();
+            new AlertDialog.Builder(this)
+                    .setTitle("提示")
+                    .setIcon(R.mipmap.icon_teacher_head)
+                    .setMessage("学生添加成功,密码即学号")
+                    .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                            AddStudentActivity.this.finish();
+                        }
+                    }).show();
         }
 
         mDbOperate.CloseDB();

@@ -73,8 +73,7 @@ public class MyCurriculumFragment extends BaseFragment {
         int now_day = calendar.get(Calendar.DAY_OF_MONTH);
         int now_hour = calendar.get(Calendar.HOUR_OF_DAY);
         int now_min = calendar.get(Calendar.MINUTE);
-        int now_second = calendar.get(Calendar.SECOND);
-        String data = now_year + "-" + (now_month + 1) + "-" + now_day + "/" + now_hour + ":" + now_min + ":" + now_second;
+        String data = now_year + "-" + (now_month + 1) + "-" + now_day + "/" + now_hour + ":" + now_min;
         //
         Cursor cursor = dbOperate.selectDB("select * from " + sqlData.STUDENT_COU + " " +
                 "where teacher_id = '" + mWork_num + "'");
