@@ -2,7 +2,7 @@ package com.zyapp.sm.teacher.fragment;
 
 import android.database.Cursor;
 import android.util.Log;
-import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.zyapp.sm.R;
@@ -26,10 +26,11 @@ import java.util.List;
 public class MyStudentFragment extends BaseFragment {
 
     private static final String TAG = "MyStudentFragment";
-    private ListView li_my_student;
+    private ListView lv_my_student;
     private List<studentBean> mStudentData;
     private DBOperate mDbOperate;
     private String mWork_num;
+    private LinearLayout layout_my_class_empty;
 
     @Override
     protected int getRootViewResId() {
@@ -45,7 +46,8 @@ public class MyStudentFragment extends BaseFragment {
         }
         Log.d(TAG, "接收到教师工号==> " + mWork_num);
         //初始化控件
-        li_my_student = getActivity().findViewById(R.id.li_my_student);
+        lv_my_student = getActivity().findViewById(R.id.li_my_student);
+        layout_my_class_empty = getActivity().findViewById(R.id.layout_my_student_empty);
         //添加数据
         mStudentData = new ArrayList<studentBean>();//创建list集合
         //检索数据库
@@ -53,8 +55,9 @@ public class MyStudentFragment extends BaseFragment {
         //实例化适配器
         StudentAdapter adapter = new StudentAdapter(getActivity(), R.layout.item_li_student, mStudentData);
         //设置适配器
-        if (li_my_student != null) {
-            li_my_student.setAdapter(adapter);
+        if (lv_my_student != null) {
+            lv_my_student.setAdapter(adapter);
+            lv_my_student.setEmptyView(layout_my_class_empty);
         }
     }
 
@@ -80,6 +83,7 @@ public class MyStudentFragment extends BaseFragment {
             mStudentData.add(new studentBean(str_student_id, str_name, str_sex, str_school, str_department,
                     str_class, str_type));
         }
+        cursor.close();
         //关闭数据库
         mDbOperate.CloseDB();
     }

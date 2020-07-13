@@ -85,6 +85,7 @@ public class EstablishCurriculumActivity extends AppCompatActivity {
         Cursor cursor = dbOperate.selectDB("select * from " + sqlData.STUDENT_COU + " " +
                 "where lesName = '" + str_les_name + "'");
         if (cursor.getCount() > 0) {
+            cursor.close();
             Toast.makeText(this, "课程已存在", Toast.LENGTH_SHORT).show();
             return;
         } else {

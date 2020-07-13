@@ -1,9 +1,13 @@
 package com.zyapp.sm.teacher.fragment;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -13,6 +17,9 @@ import androidx.fragment.app.FragmentTransaction;
 import com.zyapp.sm.R;
 import com.zyapp.sm.activity.EstablishCurriculumActivity;
 import com.zyapp.sm.activity.PublishJobActivity;
+import com.zyapp.sm.activity.WorkSearchActivity;
+import com.zyapp.sm.sql.DBOperate;
+import com.zyapp.sm.sql.sqlData;
 import com.zyapp.sm.teacher.base.BaseFragment;
 
 import java.util.Objects;
@@ -34,6 +41,7 @@ public class WorkFragment extends BaseFragment {
     private FragmentManager mFm;
     private ImageView iv_publish_job, iv_establish_curriculum;
     private static String mWork_num;
+    private EditText et_work_search;
 
     @Override
     protected int getRootViewResId() {
@@ -60,7 +68,6 @@ public class WorkFragment extends BaseFragment {
         mPublishJobFragment.setArguments(bundle);
         mMyCurriclumFragment.setArguments(bundle);
     }
-
 
     private void initFragment() {
         mPublishJobFragment = new PublishJobFragment();
@@ -123,5 +130,13 @@ public class WorkFragment extends BaseFragment {
         layout_to_be_corrected = getActivity().findViewById(R.id.layout_to_be_corrected);
         iv_publish_job = getActivity().findViewById(R.id.iv_publish_job);
         iv_establish_curriculum = getActivity().findViewById(R.id.iv_establish_curriculum);
+        et_work_search = getActivity().findViewById(R.id.et_work_search);
+        //
+        et_work_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), WorkSearchActivity.class));
+            }
+        });
     }
 }

@@ -115,8 +115,7 @@ public class AdminLoginActivity extends AppCompatActivity implements View.OnClic
                         Intent AdministratorsActivity = new Intent(AdminLoginActivity.this, AdministratorsActivity.class);
                         AdministratorsActivity.putExtra("id", login);
                         startActivity(AdministratorsActivity);
-                        cursor.getCount();
-
+                        cursor.close();
                         //勾选记住密码
                         if (cb_A_password.isChecked()) {
                             SharedPreferences.Editor edit = sp.edit();

@@ -76,12 +76,12 @@ public class PublishJobActivity extends AppCompatActivity {
                 int now_day = calendar.get(Calendar.DAY_OF_MONTH);
                 int now_hour = calendar.get(Calendar.HOUR_OF_DAY);
                 int now_min = calendar.get(Calendar.MINUTE);
-                int now_second = calendar.get(Calendar.SECOND);
-                String date = now_year + "-" + (now_month + 1) + "-" + now_day + "/" + now_hour + ":" + now_min + ":" + now_second;
+                String date = now_year + "-" + (now_month + 1) + "-" + now_day + "/" + now_hour + ":" + now_min;
                 Log.d(TAG, "当前时间==> " + date);
 
                 Cursor cursor1 = dbOperate.selectDB("select * from " + sqlData.WORK + " where name = '" + str_work_name + "'");
                 if (cursor1.getCount() > 0) {
+                    cursor.close();
                     Toast.makeText(PublishJobActivity.this, "作业重复", Toast.LENGTH_SHORT).show();
                     return;
                 } else {

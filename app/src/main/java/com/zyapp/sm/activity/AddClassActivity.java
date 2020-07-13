@@ -87,6 +87,7 @@ public class AddClassActivity extends AppCompatActivity {
         Cursor cursor = mDbOperate.selectDB("select * from " + sqlData.CLASS_TABLE + " where _id = '" +
                 str_class_id + "' ");
         if (cursor.getCount() > 0) {
+            cursor.close();
             Toast.makeText(this, "该班级已存在", Toast.LENGTH_SHORT).show();
             return;
         } else {

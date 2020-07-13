@@ -2,11 +2,11 @@ package com.zyapp.sm.teacher.fragment;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.zyapp.sm.R;
 import com.zyapp.sm.activity.AddAchievementActivity;
@@ -31,9 +31,10 @@ public class AchievementFragment extends BaseFragment {
 
     private static final String TAG = "AchievementFragment";
     private ImageView iv_add_achievement;
-    private ListView li_achievement;
+    private ListView lv_achievement;
     private List<totalBean> mStudentData;
     private String mWork_num;
+    private LinearLayout layout_achievement_empty;
 
     @Override
     protected int getRootViewResId() {
@@ -52,8 +53,9 @@ public class AchievementFragment extends BaseFragment {
         //实例化适配器
         TotalAdapter adapter = new TotalAdapter(getActivity(), R.layout.item_li_score, mStudentData);
         //设置适配器
-        if (li_achievement != null) {
-            li_achievement.setAdapter(adapter);
+        if (lv_achievement != null) {
+            lv_achievement.setAdapter(adapter);
+            lv_achievement.setEmptyView(layout_achievement_empty);
         }
     }
 
@@ -74,9 +76,12 @@ public class AchievementFragment extends BaseFragment {
             String stuId = cursor.getString(cursor.getColumnIndex("stuId"));
             String total = cursor.getString(cursor.getColumnIndex("total"));
             double d_total = Double.parseDouble(total);
+            //修改数据库排名
+            dbOperate.operationDB("update " + sqlData.TOTAL + " set ranking = '" + i + "' " +
+                    "where stuId = '" + stuId + "'");
             mStudentData.add(new totalBean(stuId, i, d_total));
         }
-
+        cursor.close();
         //关闭数据库
         dbOperate.CloseDB();
     }
@@ -85,7 +90,8 @@ public class AchievementFragment extends BaseFragment {
      *
      */
     private void initView() {
-        li_achievement = getActivity().findViewById(R.id.li_achievement);
+        layout_achievement_empty = getActivity().findViewById(R.id.layout_achievement_empty);
+        lv_achievement = getActivity().findViewById(R.id.li_achievement);
         iv_add_achievement = getActivity().findViewById(R.id.iv_add_achievement);
         iv_add_achievement.setOnClickListener(new View.OnClickListener() {
             @Override

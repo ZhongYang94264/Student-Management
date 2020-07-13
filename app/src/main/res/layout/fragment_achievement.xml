@@ -86,10 +86,30 @@
 
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/li_achievement"
+        <ListView
+            android:id="@+id/li_achievement"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite" />
+
+    <LinearLayout
+        android:id="@+id/layout_achievement_empty"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorWhite" />
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_achievement_empty" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="暂无数据"
+            android:textColor="@color/colorBlack" />
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -15,11 +15,11 @@
             android:id="@+id/tv_stuWordName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="作业名称"
+            android:text="__"
             android:textColor="#000"
             android:textSize="25sp" />
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp">
@@ -28,16 +28,17 @@
                 android:id="@+id/tv_stuWordTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="发布时间" />
+                android:layout_alignParentStart="true"
+                android:text="__-__-__/__:__" />
 
             <TextView
                 android:id="@+id/tv_stuCourse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="140dp"
-                android:text="课程名称"/>
+                android:layout_alignParentRight="true"
+                android:text="__" />
 
-        </LinearLayout>
+        </RelativeLayout>
 
     </LinearLayout>
 

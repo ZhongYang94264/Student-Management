@@ -47,7 +47,7 @@ public class TotalAdapter extends ArrayAdapter<totalBean> {
             holder.tv_li_student_id = view.findViewById(R.id.tv_li_student_id);
             holder.tv_li_total = view.findViewById(R.id.tv_li_total);
             //存放布局
-            view.setTag(view);
+            view.setTag(holder);
         } else {
             //直接加载布局
             view = convertView;

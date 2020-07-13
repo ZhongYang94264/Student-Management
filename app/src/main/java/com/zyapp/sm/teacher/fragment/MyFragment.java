@@ -91,7 +91,7 @@ public class MyFragment extends BaseFragment implements View.OnClickListener {
             tv_tel.setText(str_tel);
             tv_email.setText(str_email);
         }
-
+        cursor.close();
         //关闭数据库
         dbOperate.CloseDB();
     }

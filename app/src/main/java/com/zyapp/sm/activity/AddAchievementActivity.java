@@ -86,6 +86,7 @@ public class AddAchievementActivity extends AppCompatActivity {
         //
         Cursor cursor = dbOperate.selectDB("select * from " + sqlData.TOTAL + " where stuId = '" + str_student_id + "'");
         if (cursor.getCount() > 0) {
+            cursor.close();
             Toast.makeText(this, "该学生已存在", Toast.LENGTH_SHORT).show();
         } else {
             //修改数据库

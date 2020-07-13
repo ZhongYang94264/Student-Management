@@ -95,6 +95,7 @@ public class AdminRegisterActivity extends AppCompatActivity {
                 Cursor cursor = dbOperate.selectDB(query_sql);
                 //判断游标数量
                 if (cursor.getCount() > 0) {
+                    cursor.close();
                     Toast.makeText(AdminRegisterActivity.this, "该账号已被注册", Toast.LENGTH_SHORT).show();
                     return;
                 } else {

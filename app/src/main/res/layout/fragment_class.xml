@@ -11,4 +11,27 @@
         android:layout_height="match_parent"
         android:background="#FFE5D4" />
 
+    <LinearLayout
+        android:id="@+id/layout_my_class_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFE5D4"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:src="@mipmap/icon_my_class_empty" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="还没有班级"
+            android:textColor="#DD292D"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
 </LinearLayout>

@@ -52,7 +52,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     //总分表
     private void totalTable(SQLiteDatabase db) {
-        String CRETE_TOTAL = "create table " + sqlData.TOTAL + " (stuId VARCHAR primary key, total VARCHAR)";
+        String CRETE_TOTAL = "create table " + sqlData.TOTAL + " (stuId VARCHAR primary key, total VARCHAR,ranking integer)";
         db.execSQL(CRETE_TOTAL);
 
     }

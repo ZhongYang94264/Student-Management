@@ -77,7 +77,9 @@ public class StudentActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.btn_out:
                 Intent intent5 = new Intent(StudentActivity.this, StudentLoginActivity.class);
+                intent5.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent5);
+                finish();
                 break;
 
 

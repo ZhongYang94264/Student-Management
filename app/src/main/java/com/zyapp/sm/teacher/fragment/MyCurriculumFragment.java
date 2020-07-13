@@ -2,6 +2,7 @@ package com.zyapp.sm.teacher.fragment;
 
 import android.database.Cursor;
 import android.util.Log;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.zyapp.sm.R;
@@ -27,9 +28,10 @@ import java.util.Objects;
 public class MyCurriculumFragment extends BaseFragment {
 
     private static final String TAG = "MyCurriculumFragment";
-    private ListView li_my_curriculum;
+    private ListView lv_my_curriculum;
     private String mWork_num;
     private List<curriculumBean> mCurriculumBeans;
+    private LinearLayout layout_my_curriculum_empty;
 
     @Override
     protected int getRootViewResId() {
@@ -45,7 +47,8 @@ public class MyCurriculumFragment extends BaseFragment {
             Log.d(TAG, "获得到教室工号==> " + mWork_num);
         }
         //初始化
-        li_my_curriculum = Objects.requireNonNull(getActivity()).findViewById(R.id.li_to_be_corrected);
+        lv_my_curriculum = Objects.requireNonNull(getActivity()).findViewById(R.id.li_to_be_corrected);
+        layout_my_curriculum_empty = Objects.requireNonNull(getActivity()).findViewById(R.id.layout_my_curriculum_empty);
         //添加数据
         mCurriculumBeans = new ArrayList<>();
         //检索数据库
@@ -53,8 +56,9 @@ public class MyCurriculumFragment extends BaseFragment {
         //实例化适配器
         CurriculumAdapter adapter = new CurriculumAdapter(getActivity(), R.layout.item_my_curriculum, mCurriculumBeans);
         //设置适配器
-        if (li_my_curriculum != null) {
-            li_my_curriculum.setAdapter(adapter);
+        if (lv_my_curriculum != null) {
+            lv_my_curriculum.setAdapter(adapter);
+            lv_my_curriculum.setEmptyView(layout_my_curriculum_empty);
         }
     }
 
@@ -79,6 +83,7 @@ public class MyCurriculumFragment extends BaseFragment {
             String str_teacherName = cursor.getString(cursor.getColumnIndex("teacherName"));
             mCurriculumBeans.add(new curriculumBean(str_teacherName, str_curriculumName, data));
         }
+        cursor.close();
         dbOperate.CloseDB();
     }
 }

@@ -2,6 +2,7 @@ package com.zyapp.sm.teacher.fragment;
 
 import android.database.Cursor;
 import android.util.Log;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.zyapp.sm.R;
@@ -26,9 +27,10 @@ import java.util.Objects;
 public class PublishJobFragment extends BaseFragment {
 
     private static final String TAG = "PublishJobFragment";
-    private ListView li_publish_job;
+    private ListView lv_publish_job;
     private List<workBean> mWorkData;
     private String mWork_num;
+    private LinearLayout layout_publish_job_empty;
 
     @Override
     protected int getRootViewResId() {
@@ -44,15 +46,17 @@ public class PublishJobFragment extends BaseFragment {
             Log.d(TAG, "接收到教师工号 ==>" + mWork_num);
         }
         //初始化
-        li_publish_job = Objects.requireNonNull(getActivity()).findViewById(R.id.li_publish_job);
+        lv_publish_job = Objects.requireNonNull(getActivity()).findViewById(R.id.li_publish_job);
+        layout_publish_job_empty = Objects.requireNonNull(getActivity()).findViewById(R.id.layout_publish_job_empty);
         //添加数据
         mWorkData = new ArrayList<>();
         initWork();//检索数据库
         //实例化适配器
         WorkAdapter adapter = new WorkAdapter(getActivity(), R.layout.item_publish_job, mWorkData);
         //设置适配器
-        if (li_publish_job != null) {
-            li_publish_job.setAdapter(adapter);
+        if (lv_publish_job != null) {
+            lv_publish_job.setAdapter(adapter);
+            lv_publish_job.setEmptyView(layout_publish_job_empty);
         }
     }
 
@@ -68,7 +72,7 @@ public class PublishJobFragment extends BaseFragment {
             String str_lesname = cursor.getString(cursor.getColumnIndex("lesName"));
             mWorkData.add(new workBean(str_name, str_time, str_lesname));
         }
-
+        cursor.close();
         dbOperate.CloseDB();
     }
 }

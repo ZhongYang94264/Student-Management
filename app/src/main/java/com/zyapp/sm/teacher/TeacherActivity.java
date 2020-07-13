@@ -38,7 +38,7 @@ public class TeacherActivity extends AppCompatActivity {
         //设置系统状态栏的颜色
         this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorTeacher));
         //初始化Fragment
-        initfragment();
+        initFragment();
         //底部导航栏的点击事件
         initBottomListener();
         //接收来自登陆界面的工号
@@ -99,7 +99,7 @@ public class TeacherActivity extends AppCompatActivity {
     /**
      * 初始化碎片
      */
-    private void initfragment() {
+    private void initFragment() {
         mStudentFragment = new StudentFragment();
         mAchievementFragment = new AchievementFragment();
         mWorkFragment = new WorkFragment();

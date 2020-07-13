@@ -100,6 +100,7 @@ public class AddStudentActivity extends AppCompatActivity {
         //查询学生是否已被添加
         Cursor cursor = mDbOperate.selectDB("select * from " + sqlData.STUDENT + " where _id = '" + str_student_id + "' ");
         if (cursor.getCount() > 0) {
+            cursor.close();
             Toast.makeText(this, "该学生已存在", Toast.LENGTH_SHORT).show();
             return;
         } else {

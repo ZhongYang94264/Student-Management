@@ -129,6 +129,7 @@ public class StudentLoginActivity extends AppCompatActivity implements View.OnCl
                         Intent s_intent = new Intent(StudentLoginActivity.this, StudentActivity.class);
                         s_intent.putExtra("student_id", student);
                         startActivity(s_intent);
+                        cursor.close();
                         Toast.makeText(this, "账号密码正确", Toast.LENGTH_SHORT).show();
                         //勾选记住密码
                         if (cb_R_password.isChecked()) {

@@ -10,6 +10,29 @@
         android:id="@+id/li_to_be_corrected"
         android:layout_width="match_parent"
         android:divider="#C8EFD4"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/layout_my_curriculum_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#C8EFD4"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:src="@mipmap/icon_curriculum_empty" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="还没创建课程"
+            android:textColor="#0E922E"
+            android:textSize="20sp" />
+
+    </LinearLayout>
 
 </LinearLayout>
