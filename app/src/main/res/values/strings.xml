@@ -25,5 +25,7 @@
     <string name="text_student_login">登 录</string>
     <string name="text_student_help">还没有账号?</string>
     <string name="text_admin_password">请填写密码</string>
+    <string name="text_teacher_register_hint">格式：2020001</string>
+    <string name="text_add_student_hint">格式：2020000001</string>
 
 </resources>

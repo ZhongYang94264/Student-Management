@@ -73,7 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:hint="格式：2020000001"
+            android:hint="@string/text_add_student_hint"
             android:maxLines="1"
             android:textColor="@color/colorBlack"
             android:textSize="18sp" />

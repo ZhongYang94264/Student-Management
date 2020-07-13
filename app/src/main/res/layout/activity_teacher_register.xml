@@ -67,7 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
-            android:hint="格式：2020001"
+            android:hint="@string/text_teacher_register_hint"
             android:inputType="number"
             android:maxLines="1"
             android:paddingTop="15dp"
