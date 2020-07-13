@@ -41,8 +41,10 @@ public class Information extends Activity {
                 DBO.operationDB(sentence);
                 DBO.CloseDB();
                 Toast.makeText(Information.this, "注销成功", Toast.LENGTH_SHORT).show();
+                Intent AdminLoginActivity=new Intent(Information.this, AdminLoginActivity.class);
+                AdminLoginActivity.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(AdminLoginActivity);
                 Information.this.finish();
-                startActivity(new Intent(Information.this, AdminLoginActivity.class));
             }
         });
         Dhk.setNegativeButton("取消", new DialogInterface.OnClickListener() {
