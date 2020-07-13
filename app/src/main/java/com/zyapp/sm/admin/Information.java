@@ -5,6 +5,8 @@ import com.zyapp.sm.sql.DBOperate;
 import com.zyapp.sm.sql.sqlData;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -28,13 +30,26 @@ public class Information extends Activity {
     }
     //注销管理员
     public void cancellation(View view) {
-        DBOperate DBO=new DBOperate();
-        DBO.OpenDB(this);
-        String sentence=" delete from "+ sqlData.ADMIN_TABLE + " where _id='" + tv_admin_id.getText().toString()+"'";
-        DBO.operationDB(sentence);
-        DBO.CloseDB();
-        Toast.makeText(this, "注销成功", Toast.LENGTH_SHORT).show();
-        this.finish();
-        startActivity(new Intent(this, AdminLoginActivity.class));
+        AlertDialog.Builder Dhk = new AlertDialog.Builder(Information.this);//新建对话框
+        Dhk.setTitle("是否注销");
+        Dhk.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                DBOperate DBO=new DBOperate();
+                DBO.OpenDB(Information.this);
+                String sentence=" delete from "+ sqlData.ADMIN_TABLE + " where _id='" + tv_admin_id.getText().toString()+"'";
+                DBO.operationDB(sentence);
+                DBO.CloseDB();
+                Toast.makeText(Information.this, "注销成功", Toast.LENGTH_SHORT).show();
+                Information.this.finish();
+                startActivity(new Intent(Information.this, AdminLoginActivity.class));
+            }
+        });
+        Dhk.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+        Dhk.show();
     }
 }
